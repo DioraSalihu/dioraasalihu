@@ -1,0 +1,15 @@
+.h1{
+    background-color: black; color: pink;
+}
+.h{
+    background-color: rgba(8, 8, 8, 0.053); color: purple;
+}
+.p{
+    background-color: aquamarine; color: black;
+}
+.p1{
+    background-color: aquamarine; color: brown;
+}
+body{
+    background-image: url("nature.jpg");
+}
