@@ -1,0 +1,47 @@
+.decorative{
+font-family: 'Times New Roman';
+}
+.sh{
+    font-size: 90px;
+    float: left;
+    margin-top: 0.2px ;
+    line-height: 0.7;
+    font-weight: 300;
+}
+.word{
+    font-size: 15px;
+    line-height: 0.8;
+    text-transform:uppercase;
+}
+.second{
+font-family: Arial;
+}
+.first{
+    font-size: 90px;
+    float: left;
+    margin-top: 0.2px ;
+    line-height: 0.8;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: orange;
+}
+.half{
+    font-size: 15px;
+    line-height: 0.8;
+    text-transform:uppercase;
+    font-weight: 900;
+}
+.third{
+    font-family: Arial;
+}
+.letter{
+font-size: 100px;
+font-weight: 700;
+text-decoration: underline;
+text-decoration-color: orange;
+}
+.four{
+    font-size: 18px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
