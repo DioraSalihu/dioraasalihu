@@ -1,0 +1,35 @@
+body{
+    margin: 0;
+}
+.title1{
+    width: 25vh;
+    background-color: grey;
+    font-family: 'Courier New';
+    font-size: 0.6em;
+    color: white;
+}
+.subtitle1{
+    width: 25vh;
+    background-color: bisque;
+    font-family: Arial;
+    font-size: 0.4em;
+    color: black;
+}
+.title2{
+    width: 25vh;
+    background-color: grey;
+    font-family: Impact;
+    font-size: 0.8em;
+    color: white;
+}
+.subtitle2{
+    width: 25vh;
+    background-color: bisque;
+    font-family: 'Times New Roman';
+    font-size: 0.7em;
+    color: black;
+}
+hr{
+border-bottom: 1px solid red;
+width: 33%;
+}
