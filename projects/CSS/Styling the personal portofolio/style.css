@@ -24,7 +24,6 @@ li.subtitle {
     border: 1px;
     background-color: rgb(44, 212, 224);
     padding: 7px;
-    border-collapse: collapse;
     color: white;
 }
 
@@ -38,7 +37,6 @@ li.subtitle:hover {
     height: auto;
     background: rgb(255, 255, 255);
     background: linear-gradient(51deg, rgba(255, 255, 255, 1) 0%, rgba(255, 191, 191, 1) 100%);
-    border-collapse: collapse;
     border-radius: 20px;
 
 }
@@ -54,7 +52,6 @@ li.subtitle:hover {
     width: auto;
     height: 180px;
     background: linear-gradient(51deg, rgba(255, 255, 255, 1) 0%, rgba(201, 188, 180, 1) 100%);
-    border-collapse: collapse;
     border-radius: 20px;
 }
 
@@ -70,7 +67,6 @@ li.subtitle:hover {
     height: 140px;
     background: rgb(224, 207, 188);
     background: linear-gradient(297deg, rgba(224, 207, 188, 1) 0%, rgba(235, 217, 195, 1) 100%, rgba(230, 255, 183, 1) 100%);
-    border-collapse: collapse;
     border-radius: 20px;
 }
 
@@ -82,6 +78,7 @@ li.subtitle:hover {
 
 table {
     margin-left: 15px;
+    border-collapse: collapse;
 }
 
 .my-projects {
@@ -90,7 +87,6 @@ table {
     height: 180px;
     background: rgb(223, 194, 226);
     background: radial-gradient(circle, rgba(223, 194, 226, 1) 0%, rgba(240, 233, 241, 1) 0%, rgba(232, 212, 235, 1) 88%, rgba(228, 195, 235, 1) 100%);
-    border-collapse: collapse;
     border-radius: 20px;
 }
 
@@ -109,11 +105,15 @@ table {
     text-align: center;
     padding-top: 6px;
     padding-bottom: 8px;
-    border-collapse: collapse;
-    position: relative;
 }
 
-
+.text::marker {
+    position: absolute;
+}
+.icon{
+    position: relative;
+    bottom: 0%;
+}
 .description {
     color: grey;
 }
@@ -185,7 +185,8 @@ button {
 .project-3:hover {
     border: 5px solid rgb(202, 167, 110);
 }
-.message{
+
+.message {
     font-size: 12px;
     width: 100px;
     height: 30px;
@@ -193,34 +194,41 @@ button {
     background-color: bisque;
     color: rgb(0, 0, 0);
 }
-.message:hover{
+
+.message:hover {
     background-color: rgb(227, 151, 43);
 }
-.contact-form{
+
+.contact-form {
     width: auto;
     height: auto;
-    background-color:rgb(194, 194, 194);
+    background-color: rgb(194, 194, 194);
     border-radius: 10px;
     text-align: center;
 }
-.contact-form:hover{
+
+.contact-form:hover {
     background-color: rgb(88, 88, 110);
     color: white;
 }
-.connect{
+
+.connect {
     width: auto;
     height: auto;
     background-color: beige;
     text-align: center;
 }
-.connect:hover{
-   text-decoration-line: underline;
-   border: 2px solid green;
+
+.connect:hover {
+    text-decoration-line: underline;
+    border: 2px solid green;
 }
-.back:hover:first-letter{
+
+.back:hover:first-letter {
     font-size: 40px;
 }
-.the-color{
+
+.the-color {
     color: white;
     cursor: url("icons8-rocket-32.png"), auto;
 }
