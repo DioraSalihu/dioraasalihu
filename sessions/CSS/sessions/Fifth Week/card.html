@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      flex-direction: column;
+    }
+
+    .bottom {
+      background-image: url(marvel.jpg);
+      background-repeat: no-repeat;
+      display: flex;
+      background-size: 100%;
+      width: 250px;
+      height: 360px;
+      color: white;
+      border: 3px solid black;
+      flex-direction: column;
+
+    }
+
+    .card {
+      display: flex;
+      width: 250px;
+      border: 5px solid black;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .upper {
+      display: flex;
+      height: 125px;
+    }
+
+    .left  ,.right {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 125px;
+      height: 125px;
+      flex-direction: column;
+      border: 2px solid black;
+      font-size: 36px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="card">
+    <div class="upper">
+      <span class="left">
+        40c
+      </span>
+      
+      <span class="right">
+        <span>
+          29
+        </span>
+        <span>
+          Jan
+        </span>
+        <span>
+          02461
+        </span>
+    </div>
+
+    <div class="bottom">
+      <span>© 1979 Marvel </span>
+      <span>Comics Group</span>
+    </div>
+  </div>
+</body>
+
+</html>
