@@ -9,47 +9,45 @@
         body {
             margin: 0;
             padding: 0;
+            height: 100vh;
         }
 
         .container {
-            display: flex;
-            height: 100vh;
-            gap: 50px;
-            font-family: 'Times New Roman', Times, serif;
-        }
-
-        aside {
-            background-color: rgb(83, 83, 228);
-            display: flex;
-            flex: 0 0 20%;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-end;
-            color: white;
-            text-align: right;
-            padding: 40px;
-            font-size: 20px;
-            font-family: 'Lucida Sans';
-
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            column-gap: 30px;
         }
 
         .button {
+            display: flex;
             border: 1px solid black;
             width: 80px;
             height: 40px;
-            text-align: center;
+            align-items: center;
             cursor: pointer;
+            justify-content: center;
         }
 
         .button:hover {
-
             background-color: rgb(220, 244, 245);
             color: black;
             cursor: pointer;
         }
 
-        main {
-            flex: 1;
+        aside {
+            width: 300px;
+            background-color: rgb(83, 83, 228);
+            display:grid;
+            color: white;
+            text-align: right;
+            padding: 40px;
+            font-size: 20px;
+            
+        }
+
+        .content {
+            display: grid;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
         }
 
         .name {
@@ -72,14 +70,16 @@
         }
 
         .title {
+            display: grid;
             color: grey;
+            grid-row: 1/2;
         }
 
         .image {
             display: flex;
             justify-content: space-between;
             align-items: center;
-
+            grid-row: 2/3;
         }
 
         .picture {
@@ -90,6 +90,11 @@
         .intro {
             font-size: 40px;
 
+        }
+
+        .wrapper {
+            display: grid;
+            grid-row: 2/3;
         }
     </style>
 </head>
@@ -109,17 +114,21 @@
         </aside>
         <main>
 
-            <div>
+            <div class="content">
                 <h2 class="title">PINNED POST </h2>
-                <hr>
-                <div class="image">
-                    <h1 class="subtitle">A pinned post</h1> <img src="profileman.png" alt="profileman" class="picture">
+                
+                <div class="wrapper">
+                    <div class="image">
+                        <h1 class="subtitle">A pinned post</h1> <img src="profileman.png" alt="profileman"
+                            class="picture">
+                    </div>
                 </div>
-                <p>By <span class="name">John Doeunder</span> under
+                <p class="text">By <span class="name">John Doeunder</span> under
                     <span class="css">CSS</span>
                     <span class="html">HTML</span>
                 </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A ratione quam, quibusdam natus sapiente
+                <p class="paragraph">Lorem ipsum dolor sit amet consectetur adipisicing elit. A ratione quam, quibusdam
+                    natus sapiente
                     doloribus nemo neque magni excepturi iusto magnam aut culpa sit necessitatibus praesentium nisi est
                     autem pariatur?
                 </p>
@@ -127,21 +136,28 @@
 
             <br><br><br><br>
 
-            <div>
+            <div class="content">
                 <h2 class="title">RECENT POSTS</h2>
-                <hr>
-                <div class="image">
-                    <h1 class="subtitle">A pinned post </h1> <img src="girlproflie.webp" alt="girlproflie"
-                        class="picture">
+                
+                <div class="wrapper">
+                    <div class="image">
+                        <h1 class="subtitle">A pinned post </h1> <img src="girlproflie.webp" alt="girlproflie"
+                            class="picture">
+                    </div>
                 </div>
-                <p>By <span class="name">Rocky Balboa</span> under
-                    <span class="java">JavaScript</span>
+                <div class="text">
+                    <p>By <span class="name">Rocky Balboa</span> under
+                        <span class="java">JavaScript</span>
 
-                </p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A ratione quam, quibusdam natus sapiente
-                    doloribus nemo neque magni excepturi iusto magnam aut culpa sit necessitatibus praesentium nisi est
-                    autem pariatur?
-                </p>
+                    </p>
+                </div>
+                <div class="paragraph">
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A ratione quam, quibusdam natus sapiente
+                        doloribus nemo neque magni excepturi iusto magnam aut culpa sit necessitatibus praesentium nisi
+                        est
+                        autem pariatur?
+                    </p>
+                </div>
             </div>
         </main>
     </div>

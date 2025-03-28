@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: grid;
+            background-color: bisque;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr;
+            height: 100vh;
+            
+        }
+
+        .container {
+            width: 700px; ;
+            margin: 150px;
+            background-color: white;
+            display: grid;
+            align-items: center;
+            place-content: center;
+            border-radius: 10px;
+            grid-row: 2/3;
+            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-columns: 1fr;
+            -webkit-box-shadow: 0px 0px 50px -1px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 0px 0px 50px -1px rgba(0, 0, 0, 0.75);
+            box-shadow: 0px 0px 50px -1px rgba(0, 0, 0, 0.75);
+        }
+
+        .title {
+            display: grid;
+            justify-content: center;
+            grid-row: 1/2;
+            align-self: center;
+        }
+
+        .first-text {
+            display: grid;
+            text-align: center;
+            grid-row: 2/3;
+        }
+
+        .second-text {
+            display: grid;
+            text-align: center;
+            grid-row: 3/4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Hello Grid</h1>
+        </div>
+        <div class="first-text">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Consectetur repudiandae dolore voluptatum
+                accusantium adipisci, similique aut quaerat ratione, explicabo commodi amet magni maiores nostrum nulla
+                dolorum fuga culpa exercitationem inventore! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Minima accusamus in cum ut, modi molestias omnis, inventore tempore enim eligendi qui quibusdam
+                molestiae magni hic commodi deserunt repellat impedit ad.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem harum praesentium assumenda pariatur enim
+                possimus, minus sapiente obcaecati asperiores laborum labore repudiandae vero consequuntur facilis
+                maiores. Tempore, ut? Neque, voluptatum. Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                Recusandae nulla nam dicta suscipit atque est pariatur, nostrum officiis reprehenderit velit
+                necessitatibus dolor, debitis harum ipsa porro corrupti provident? Deleniti, magni?</p>
+        </div>
+        <div class="second-text">
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Cum porro iure suscipit laborum sunt mollitia
+                tempore natus non repellat explicabo tempora minima praesentium, earum impedit excepturi quibusdam
+                asperiores dolorem nemo? Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quia dolores magni
+                modi perferendis tempora ullam neque cupiditate praesentium illum voluptatem. Magnam commodi officiis
+                nostrum modi similique dolorem mollitia animi eos?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, tempora ut quam doloribus
+                exercitationem, quasi nam eaque saepe vero sapiente in voluptate minus consequuntur cupiditate maiores
+                voluptatem, dolorem possimus repellat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+                tenetur provident vel hic saepe. Itaque adipisci tenetur repudiandae quibusdam suscipit. Pariatur
+                quaerat voluptate id deleniti quae ipsum dolore corporis illo!
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

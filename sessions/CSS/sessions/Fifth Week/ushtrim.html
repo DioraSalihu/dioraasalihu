@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            
+        }
+
+        header {
+            background-color: aqua;
+            height: 50px;
+            display: flex;
+            gap: 1px;
+        }
+
+        .item {
+            background-color: white;
+            display: flex;
+            border-radius: 10px;
+            align-items: center;
+            margin-top: 2px;
+            padding: 3px;
+        }
+
+        .item2 {
+            background-color: white;
+            display: flex;
+            border-radius: 10px;
+            align-items: center;
+            margin-top: 2px;
+            padding: 3px;
+        }
+
+        .letter1 {
+            font-size: 100px;
+            color: rgb(0, 81, 255);
+        }
+
+        .letter2 {
+            font-size: 100px;
+            color: red;
+        }
+
+        .letter3 {
+            font-size: 100px;
+            color: orange;
+        }
+
+        .letter5 {
+            font-size: 100px;
+            color: rgb(1, 99, 1);
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            
+        }
+
+        .search-bar {
+            padding: 0.5em;
+            width: 500px;
+            height: 30px;
+            border-radius: 7em;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            box-shadow: inset 0px 0px 20px lightgrey;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri;
+            color: rgb(144, 144, 144);
+            justify-content: space-between;
+            
+        }
+
+        .search-bar—input {
+            flex-grow: 1;
+            border: none;
+            background-color: transparent;
+            outline: none;
+            font-size: 1.8em;
+            color: inherit;
+            
+        }
+
+        .search-icon {
+            width: 1.5em;
+            display: flex;
+           
+        }
+
+        .search-bar—input::placeholder {
+            color: #b6b6b6;
+        }
+        .content{
+            display: flex;
+            align-items: center;
+        justify-content: center; 
+        flex-direction: column;
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <span class="item">Microsoft Office</span>
+        <span class="item2">Google</span>
+    </header>
+    <br><br>
+    <main>
+        <span class="content">
+        <span class="wrapper">
+            <span class="letter1">G</span>
+            <span class="letter2">o</span>
+            <span class="letter3">o</span>
+            <span class="letter1">g</span>
+            <span class="letter5">l</span>
+            <span class="letter2">e</span>
+        </span>
+       <span class="search-bar">
+            <input type="text" class="search-bar-input" placeholder="Search">
+            <img class="search-icon" src="search.png">
+             </span>
+            </span>     
+    </main>
+</body>
+
+</html>
