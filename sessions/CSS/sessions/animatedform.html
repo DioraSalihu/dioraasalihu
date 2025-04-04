@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            border-radius: 10px;
+
+        }
+
+        .border {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid white;
+            background-color: grey;
+            width: 250px;
+            height: 300px;
+
+        }
+
+        button {
+            background-color: rgb(52, 52, 207);
+            color: white;
+            border: 0;
+            width: 60px;
+            height: 30px;
+        }
+
+        @keyframes Go-up {
+            from {
+                opacity: 0;
+ transform: translateY(1px);
+            }
+
+            to {
+                opacity: 1;
+ transform: translateY(-10px);
+            }
+        }
+
+        input:focus::before {
+            opacity: 0;
+           
+        }
+
+        input:focus::after {
+            opacity: 1;
+           
+        }
+
+        input:focus+.title {
+            animation: Go-up;
+            opacity: 1;
+            animation-duration: 1s;
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: translateY(-10px);
+        }
+
+        .title {
+            opacity: 0;
+            
+        }
+
+        .load {
+            width: 30px;
+            height: 30px;
+            animation: rotate720 2s linear infinite;
+        }
+
+        @keyframes rotate720 {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(720deg);
+            }
+        }
+
+        .last {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="border">
+        <div class="content">
+            <div class="wrapper">
+                <input type="text" name="name" id="name" placeholder="First Name">
+                <p class="title">*Enter a valid first name</p>
+            </div>
+
+
+            <input type="text" name="surname" id="surname" placeholder="Last Name">
+            <p class="title">*Enter a valid last name</p>
+
+            <input type="email" name="email" id="email" placeholder="Enter your email">
+            <p class="title">*Your email should be
+                <br>
+                Gmail domain
+            </p>
+            <span class="last">
+                <button>Submit</button>
+                <img class="load" src="image-removebg-preview.png" alt="loading">
+            </span>
+        </div>
+    </form>
+
+</body>
+
+</html>

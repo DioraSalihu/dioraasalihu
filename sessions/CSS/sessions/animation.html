@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+ body{
+    margin: 50px;
+ }
+
+.photo {
+  position: relative;
+  display: inline-block;
+}
+
+.photo::after {
+  content: attr(data-tooltip); /* Fetches text from the data-tooltip attribute */
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black; /* Background becomes black */
+  color: white; /* Text becomes white */
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 12px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  white-space: nowrap; /* Ensures the text stays in one line */
+}
+
+.photo:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="photo" data-tooltip="Your Custom Tooltip">
+        <img src="fma.jpg" alt="Photo" />
+      </div>
+      
+      
+</body>
+</html>
