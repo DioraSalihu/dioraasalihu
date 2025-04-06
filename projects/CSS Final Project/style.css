@@ -150,12 +150,7 @@ cursor: pointer;
     position: absolute;
     visibility: hidden;
 }
-.position:hover{
-    display: inline-block;
-    bottom: 0;
-    left: 0;
-    visibility: none;
-}
+
 button{
     font-size: 10px;
     width: 14px;
@@ -174,4 +169,51 @@ button{
 }
 main{
     margin: 0 30px 0 30px;
+    
+}
+.language{
+    border: 1px;
+    width: 70px;
+    height:70px ;
+    background-color: rgb(11, 136, 11);
+    color: white;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 2px;
+    
+}
+.description{
+    outline: 0;
+    border-collapse: collapse;
+    width: 240px;
+    height: 200px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+.details{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flag{
+    width: 20px;
+    height: 15px;
+    border-radius: 0;
+}
+.global-sales{
+    background-color: white;
+    border-radius:4px ;
+    
+    width: 950px;
+    height: 350px;
+}
+.locations{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+.subtitle{
+    display: flex;
+    align-items: center;
 }
