@@ -37,13 +37,63 @@
 }
 
 
+img:hover:after {
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+}
+[data-title]:after {
+    content: attr(data-title);
+    background-color: black;
+    color: white;
+    font-size: 150%;
+    position: absolute;
+    padding: 1px 5px 2px 5px;
+    bottom: -1.6em;
+    left: 100%;
+    white-space: nowrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 0;
+    border: 1px solid #111111;
+    z-index: 99999;
+    visibility: hidden;
+}
+[data-title] {
+    position: relative;
+}
+img{
+  width: 50px;
+  height: 50px;
+}
+
+
+span:hover {
+    position: relative;
+}
+
+span[aria-label]:hover:after {
+     content: attr(aria-label);
+     padding: 4px 8px;
+     position: absolute;
+     left: 0;
+     top: 100%;
+     white-space: nowrap;
+     z-index: 20;
+     background:rgb(0, 0, 0);
+     color: white;
+}
+
     </style>
 </head>
 <body>
     <div class="photo" data-tooltip="Your Custom Tooltip">
         <img src="fma.jpg" alt="Photo" />
       </div>
-      
-      
+      <br><br><br><br>
+      <div>
+        <img data-title="My-site" src="image-removebg-preview.png" alt="img" >
+      </div>
+      <br><br><br><br>
+      <span aria-label="This is information">This is a test</span>
 </body>
 </html>
