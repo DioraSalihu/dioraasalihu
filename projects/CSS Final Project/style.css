@@ -204,16 +204,24 @@ main{
 .global-sales{
     background-color: white;
     border-radius:4px ;
-    
+    position: relative;
     width: 950px;
     height: 350px;
+    margin-top: 60px;
+    
 }
+
 .locations{
     display: flex;
     flex-direction: row;
     padding: 20px;
+    
 }
 .subtitle{
     display: flex;
     align-items: center;
+    position: absolute;
+    top: -15px;
+    left: 20px;
+    
 }
