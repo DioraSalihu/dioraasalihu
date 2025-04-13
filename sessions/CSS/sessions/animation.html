@@ -1,99 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
- body{
-    margin: 50px;
- }
-
-.photo {
-  position: relative;
-  display: inline-block;
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <title>Document</title>
+  <style>
+    body{
+      background-color: rgb(192, 171, 174);
+    }
+    .cards{
+      background-color: rgb(255, 255, 255);
+      width: 300px;
+      height: 400px;
+      
+      overflow: hidden;
+    }
+    img{
+      width: 200px;
+      padding-left: 15px;
+      padding-right: 15px;
+      margin-top: -15px;
+      
+      transition: transform 0.5s ease; 
+      border-radius:5px ;
+      animation-name: Go-up;
+    
+    }
+    @keyframes Go-up{
+    from{
+        transform: translateY(0);
+    }
+    to{
+        transform: translateY(-40px);
+        
+    }
+    
+}
+.first:hover img{
+    animation-name: Go-up;    
+    animation-duration: 1s;
+    transform: translateY(-40px);  
+    
 }
 
-.photo::after {
-  content: attr(data-tooltip); /* Fetches text from the data-tooltip attribute */
+    .first{
+      width: 300px;
+      height: 200px;
+      background-color: rgb(255, 255, 255);
+      position: relative;
+      overflow: hidden;
+    }
+    .hidden-icons{
+      display: flex;
+      justify-content: center;
+      margin-top: -30px;
+      position: absolute;
+      margin-left: 100px;
+      opacity: 0;
+      transition: opacity 0.5s ease 0.5s;
+      transform: translateX(-50%);
+    }
+    .first:hover .hidden-icons{
+      opacity: 1;
+    }
+    .first .hidden-icons{
+      opacity: 0; 
+  transition: opacity 0s ease; /
+    }
+    .second{
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    }
+    .lorem-text{
+      margin-top: -35px;
+    }
+    
+    
+    /* General Card Styling */
+.card {
+  width: 300px;
+  background-color: white;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Image Container Styling */
+.image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s ease; /* Smooth transition for moving up */
+}
+
+/* Icons Styling (initially hidden) */
+.icons {
   position: absolute;
-  bottom: 100%;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background-color: black; /* Background becomes black */
-  color: white; /* Text becomes white */
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 12px;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease;
-  white-space: nowrap; /* Ensures the text stays in one line */
+  opacity: 0; /* Hidden by default */
+  transition: opacity 0.5s ease 0.5s; /* Delayed transition for appearing */
 }
 
-.photo:hover::after {
-  opacity: 1;
-  visibility: visible;
+/* Text Section */
+.text-container {
+  padding: 20px;
+  text-align: center;
 }
 
-
-img:hover:after {
-    opacity: 1;
-    transition: all 0.1s ease 0.5s;
-    visibility: visible;
-}
-[data-title]:after {
-    content: attr(data-title);
-    background-color: black;
-    color: white;
-    font-size: 150%;
-    position: absolute;
-    padding: 1px 5px 2px 5px;
-    bottom: -1.6em;
-    left: 100%;
-    white-space: nowrap;
-    box-shadow: 1px 1px 3px #222222;
-    opacity: 0;
-    border: 1px solid #111111;
-    z-index: 99999;
-    visibility: hidden;
-}
-[data-title] {
-    position: relative;
-}
-img{
-  width: 50px;
-  height: 50px;
+/* Hover Effect */
+.image-container:hover .image {
+  transform: translateY(-50%); /* Move image up */
 }
 
-
-span:hover {
-    position: relative;
+.image-container:hover .icons {
+  opacity: 1; /* Icons appear */
 }
 
-span[aria-label]:hover:after {
-     content: attr(aria-label);
-     padding: 4px 8px;
-     position: absolute;
-     left: 0;
-     top: 100%;
-     white-space: nowrap;
-     z-index: 20;
-     background:rgb(0, 0, 0);
-     color: white;
-}
-
-    </style>
+  </style>
 </head>
 <body>
-    <div class="photo" data-tooltip="Your Custom Tooltip">
-        <img src="fma.jpg" alt="Photo" />
+  <div class="cards">
+    <div class="first">
+      <img src="fma.jpg" alt="">
+      <span class="hidden-icons">
+        <span class="material-icons">art_track</span>
+        <span class="material-icons">edit</span>
+        <span class="material-icons">clear</span>
+      </span>
+    </div>
+    <div class="second">
+      <span class="lorem-text">
+        <h3>Office STUDIO</h3>
+        Lorem,ipsum dolor sit amet consectetur
+        <br>adipisicing elit.Magni voluptas ullam delectus
+        temporibus labore nihill!
+        <br><br><br><br>
+        <hr>
+        <span>$1.119/night</span>
+        <span class="note">
+          <span class="font">
+            <span class="material-icons">location_on</span>
+          </span>
+          <span class="other-side">London, UK</span>
+        </span>
+      </span>
+    </div>
+  </div>
+
+
+  <br><br><br><br><br>
+  <div class="card">
+    <div class="image-container">
+      <img src="fma.jpg" alt="Image" class="image" />
+      <div class="icons">
+        <span class="material-icons">art_track</span>
+        <span class="material-icons">edit</span>
+        <span class="material-icons">clear</span>
       </div>
-      <br><br><br><br>
-      <div>
-        <img data-title="My-site" src="image-removebg-preview.png" alt="img" >
-      </div>
-      <br><br><br><br>
-      <span aria-label="This is information">This is a test</span>
+    </div>
+    <div class="text-container">
+      <p>This is the text section.</p>
+    </div>
+  </div>
+  <br><br><br><br><br>
+
+
+  <div class="card">
+    <div class="photo-part">
+        <div class="photos">
+          <img src="images/card-1.jpeg" alt="castle">
+        </div>
+        <span class="hidden-icons">
+           <span class="art-track" tooltip="View"><span class="material-icons">art_track</span></span>
+           <span class="edit" tooltip="Edit"><span class="material-icons">edit</span></span>
+           <span class="clear" tooltip="Delete"><span class="material-icons">clear</span></span>
+        </span>
+    </div>
+   
+    <div class="second-part">
+        <span class="lorem-text">
+         <h4>Beautiful Castle</h4>
+         Lorem,ipsum dolor sit amet consectetur adipisicing
+          elit.Ipsum obcaecati sequi, ducimus laboriosam nulla
+          hic perspiciatis dolores expedita iure consequuntur.
+        </span>
+      <br><br><br><br> 
+    </div><hr>
+    <div class="third-part">
+        <span>$459/night</span>
+        <span class="note">
+            <span class="font">
+                <span class="material-icons">location_on</span>
+            </span>
+            <span class="other-side">Milan, Italy</span>
+        </span>  
+    </div>
+</div>
 </body>
 </html>
