@@ -335,7 +335,7 @@ button{
   position: absolute;
   top: 120%;
   left: 50%;
-  transform: translateX(-10%);
+  transform: translateX(-25%);
   background-color: black;
   color: var(--secondary-color);
   padding: 5px 10px;
@@ -382,7 +382,7 @@ box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.57);
 .description{
     border-collapse: collapse;
     border-style: hidden;
-    width: 250px;
+    width: 260px;
     height: 240px;
     margin-right: 20px;
 }
@@ -399,7 +399,6 @@ box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.57);
     height: 15px;
     border-radius: 0;
     padding-right: 10px;
-    
 }
 .global-sales{
     background-color: var(--secondary-color);
@@ -594,7 +593,7 @@ box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.57);
 .photo-part:hover .photos{
     animation-name: Go-up;    
     animation-duration: 0.5s;
-    transform: translateY(-40px);  
+    transform: translateY(-40px); 
 }
 .photo-part:hover .hidden-icons{
     opacity: 1;
@@ -649,13 +648,13 @@ color: var(--primary-color);
     margin-bottom: 20px;
     cursor: pointer;
     display: flex;
-      justify-content: center;
-      margin-top: -30px;
-      position: absolute;
-      margin-left: 130px;
-      opacity: 0;
-      transition: opacity 0.5s ease 0.5s;
-      transform: translateX(-50%);
+    justify-content: center;
+    margin-top: -30px;
+    position: absolute;
+    margin-left: 130px;
+    opacity: 0;
+    transition: opacity 0.5s ease 0.5s;
+    transform: translateX(-50%);
 }
 
 footer{
@@ -773,4 +772,79 @@ h4{
     color: black;
     font-weight: 400;
     font-size: 20px;
+}
+@media (max-width: 600px) {
+    body {
+        grid-template-columns: 280px 1fr;
+        background-color: var(--main-bg-color);   
+    }
+    .locations{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        padding-top: 90px;
+    }
+    .global-sales{
+        width: 300px;
+        height: 610px;
+        margin-top: 60px;
+    }
+    iframe{
+        width: 261px;
+        padding-top: 20px;
+    }
+    .language{
+    width: 100px;
+    height:70px ;
+    }
+    .statistics{
+      display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+    margin-top: 40px;  
+    }
+    .bookings{
+        width: 260px;
+    }
+    .website{
+        width: 260px;
+    }
+    .revenue{
+        width: 260px;
+    }
+    .social-media{
+        width: 260px;
+    }
+    .listings{
+        display: flex;
+        row-gap: 30px;
+        flex-direction: column;
+    }
+    .card{
+        width: 270px;
+        
+    }
+    .photos{
+        padding-left: 7px;
+    }
+    footer{
+        width: 300px;
+    }
+    .the-end{
+        font-size: 11px;
+    }
+}
+@media (max-width: 1024px) {
+    body {
+        background-color: var(--main-bg-color);  
+    }
+}
+@media (max-width: 640px) {
+    body {
+        grid-template-columns: 280px 1fr;
+        background-color: var(--main-bg-color);
+        
+    }
 }
