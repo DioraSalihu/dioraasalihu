@@ -423,18 +423,19 @@ box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.57);
 .description{
     border-collapse: collapse;
     border-style: hidden;
-    width: 30%;
     margin-right: 20px;
-    
+    height: 240px;  
+    width: 30%;
+}
+
+iframe{
+    width: 70%;
+    height: 240px;
 }
 .columns{
     padding-left: 10px;
 }
-.details{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+
 .flag{
     width: 20px;
     height: 15px;
@@ -444,12 +445,9 @@ box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.57);
 .global-sales{
     background-color: var(--secondary-color);
     border-radius:4px ;
-    position: relative;
-    
+    position: relative; 
     height: 350px;
     margin-top: 60px;
-    display: flex;
-    flex-wrap: wrap;
 }
 .text{
     font-size: 23px;
@@ -457,9 +455,9 @@ box-shadow: 0px 0px 12px -4px rgba(0,0,0,0.57);
     padding-top: 20px;
     font-weight: 300;
 }
+
 .locations{
     display: flex;
-    flex-direction: row;
     padding: 20px;
     padding-top: 90px; 
 }
@@ -813,13 +811,14 @@ h4{
     font-size: 20px;
 }
 
-@media only screen and (max-width: 1000px){
+
+
+@media only screen and (max-width: 1024px){
     .dehaze-icon{
         display: inline-block;
     }
     body{
-        display: flex;
-        flex-wrap: wrap;
+        grid-template-columns: 1fr;
     }
     aside{
         display: none;
@@ -838,26 +837,23 @@ h4{
         flex-direction: column;
         padding: 20px;
         padding-top: 90px;
-        flex-wrap: wrap;
+        
     }
     .global-sales{
         height: 615px;
         margin-top: 60px;
-        display: flex;
-        flex-wrap: wrap;
+       
     }
     
     .description{
         width: 100%;
-        height: 45%;
+        height: 240px;
     }
     
 
     iframe{
         padding-top: 30px;
-        width: 875px;
-        display: flex;
-        flex-wrap: wrap;
+        width: 100%;
     }
     .statistics{
         display: grid;
@@ -875,18 +871,40 @@ h4{
 
    
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 680px) {
+
+  .card,
+  .photo-part,
+  .description,
+  iframe,
+  footer
+  .global-sales
+   {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .bookings,
+  .website,
+  .revenue,
+  .social-media{
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .photos img {
+    width: 100%;
     
-    .wrapper{
-        overflow-x: hidden;
-        display: flex;
-        flex-wrap: wrap;
-    }
+  }
+
+  main {
+    overflow-x: hidden;
+  }
     
     aside{
         display: none;
     }
-    header{display: none;}
+    
     .locations{
         display: flex;
         flex-direction: column;
@@ -894,88 +912,30 @@ h4{
         padding-top: 90px;
     }
     .global-sales{
-        width: 300px;
-        height: 610px;
         margin-top: 60px;
     }
-    .description{
-        width: 261px;
-    }
+    
     iframe{
-        width: 261px;
         padding-top: 20px;
     }
-    .language{
-    width: 100px;
-    height:70px ;
-    }
+   
     .statistics{
-      display: grid;
+    display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: repeat(4 1fr);
     column-gap: 30px;
     row-gap: 30px;
     margin-top: 40px;  
     }
-    .bookings{
-        width: 260px;
-    }
-    .website{
-        width: 260px;
-    }
-    .revenue{
-        width: 260px;
-    }
-    .social-media{
-        width: 260px;
-    }
+    
     .listings{
+        width: 100%;
+        max-width: 100%;
         display: flex;
         row-gap: 30px;
         flex-direction: column;
     }
-    .card{
-        border-radius: 5px;
-        background-color: var(--secondary-color);
-        width: 270px;
-        height: 370px;
-        margin-top: 60px;
-        border-radius: 4px;
-        padding: 15px;
-        padding-bottom: 0;
-    }
     
-    footer{
-        width: 300px;
-    }
-    .the-end{
-        font-size: 11px;
-    }
-    .second-part{
-        display: flex;
-        font-size: 17px;
-        text-align: center;
-        padding-bottom: 20px;
-        }
-        #second-part{
-            display: flex;
-        font-size: 17px;
-        text-align: center;
-        padding-bottom: 53px;
-        }
-        .photo-part{
-            width: 265px;
-            height: 170px;
-        }
-        .photos img{
-            border-radius:5px ;
-            width: 270px;
-            height: 190px;
-            margin-top: -45px;
-            animation-name: Go-up;
-            position: relative;
-            z-index: 10; 
-        }
         
 }
     </style>
@@ -1137,39 +1097,39 @@ h4{
             <div class="locations">
                 <table border="1"  class="description">
                     <tr>
-                        <span class="details"><td><img src="images/usa.png" alt="usa" class="flag">USA</td></span>
+                        <td><img src="images/usa.png" alt="usa" class="flag">USA</td>
                         <td>2.920</td>
                         <td class="columns">53.23%</td>
                     </tr>
                     <tr>
-                        <span class="details"><td><img src="images/germany.png" alt="germany" class="flag">Germany</td></span>
+                        <td><img src="images/germany.png" alt="germany" class="flag">Germany</td>
                         <td>1.300</td>
                         <td class="columns">4.34%</td>
                     </tr>
                     <tr>
-                        <span class="details"><td><img src="images/australia.png" alt="australia" class="flag">Australia</td></span>
+                        <td><img src="images/australia.png" alt="australia" class="flag">Australia</td>
                         <td class="columns">760</td>
                         <td class="columns">20.43%</td>
                     </tr>
                     <tr>
-                        <span class="details"><td><img src="images/uk.png" alt="uk" class="flag">United Kingdom</td></span>
+                        <td><img src="images/uk.png" alt="uk" class="flag">United Kingdom</td>
                         <td class="columns">690</td>
                         <td class="columns">10.35%</td>
                     </tr>
                     <tr>
-                        <span class="details"><td><img src="images/romania.png" alt="romania" class="flag">Romania</td></span>
+                        <td><img src="images/romania.png" alt="romania" class="flag">Romania</td>
                         <td class="columns">600</td>
                         <td class="columns">7.87%</td>
                     </tr>
                     <tr>
-                        <span class="details"><td><img src="images/brasil.png" alt="brasil" class="flag">Brasil</td></span>
+                        <td><img src="images/brasil.png" alt="brasil" class="flag">Brasil</td>
                         <td class="columns">550</td>
                         <td class="columns">5.94%</td>
                     </tr>
                 </table>
              <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d772624.4714829541!2d-73.87313833571018!3d40.84851113967891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1743942833231!5m2!1sen!2s"
-                width="600" height="240" style="border:0;" allowfullscreen="" loading="lazy"
+                 style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade">
              </iframe>
             </div>

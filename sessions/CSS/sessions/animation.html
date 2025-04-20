@@ -127,9 +127,183 @@
   opacity: 1; /* Icons appear */
 }
 
+
+.responsive-container{
+  background-color: white;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+table{
+  width: 30%;
+  height: 100%;
+}
+iframe{
+  width: 70%;
+  height: 100%;
+}
+@media(max-width:768px) {
+  .responsive-container{
+    flex-direction: column;
+  }
+  table, iframe {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media(max-width:480px) {
+  table{
+    width: 90%;
+    font-size: smaller;
+  }
+  iframe{
+    width: 90%;
+    height: auto;
+  }
+}
+
+
+
+
+
+
+
+@media only screen and (max-width: 360px) {
+    
+    
+    aside{
+        display: none;
+    }
+    header{
+        display: none;
+    }
+    .locations{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        padding-top: 90px;
+    }
+    .global-sales{
+        width: 300px;
+        height: 610px;
+        margin-top: 60px;
+    }
+    .description{
+        width: 261px;
+    }
+    iframe{
+        width: 261px;
+        padding-top: 20px;
+    }
+    .language{
+    width: 100px;
+    height:70px ;
+    }
+    .statistics{
+      display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4 1fr);
+    column-gap: 30px;
+    row-gap: 30px;
+    margin-top: 40px;  
+    }
+    .bookings{
+        width: 260px;
+    }
+    .website{
+        width: 260px;
+    }
+    .revenue{
+        width: 260px;
+    }
+    .social-media{
+        width: 260px;
+    }
+    .listings{
+        display: flex;
+        row-gap: 30px;
+        flex-direction: column;
+    }
+    .card{
+        border-radius: 5px;
+        background-color: var(--secondary-color);
+        width: 270px;
+        height: 370px;
+        margin-top: 60px;
+        border-radius: 4px;
+        padding: 15px;
+        padding-bottom: 0;
+    }
+    
+    footer{
+        width: 300px;
+    }
+    .the-end{
+        font-size: 11px;
+    }
+    .second-part{
+        display: flex;
+        font-size: 17px;
+        text-align: center;
+        padding-bottom: 20px;
+        }
+        #second-part{
+            display: flex;
+        font-size: 17px;
+        text-align: center;
+        padding-bottom: 53px;
+        }
+        .photo-part{
+            width: 265px;
+            height: 170px;
+        }
+        .photos img{
+            border-radius:5px ;
+            width: 270px;
+            height: 190px;
+            margin-top: -45px;
+            animation-name: Go-up;
+            position: relative;
+            z-index: 10; 
+        }
+        
+}
   </style>
 </head>
 <body>
+  <div class="responsive-container">
+    <table border="1">
+   <tr>
+    <td>ME</td>
+   <td>ME</td>
+   <td>ME</td>
+  </tr>
+  <tr>
+    <td>ME</td>
+   <td>ME</td>
+   <td>ME</td>
+  </tr>
+  <tr>
+    <td>ME</td>
+   <td>ME</td>
+   <td>ME</td>
+  </tr>
+  <tr>
+    <td>ME</td>
+   <td>ME</td>
+   <td>ME</td>
+  </tr>
+</table>
+  <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d772624.4714829541!2d-73.87313833571018!3d40.84851113967891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1743942833231!5m2!1sen!2s"
+  style="border:0;" allowfullscreen="" loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+  </iframe>
+  </div>
+
+
+  <br><br><br><br><br><br>
   <div class="cards">
     <div class="first">
       <img src="fma.jpg" alt="">
