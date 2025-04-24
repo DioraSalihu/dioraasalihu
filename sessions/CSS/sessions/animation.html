@@ -268,9 +268,39 @@ iframe{
         }
         
 }
+.flex-row-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px; /* optional */
+}
+.lorem-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 15px;
+    color: var(--primary-color);
+    flex: 1; /* allow it to grow and shrink */
+}
+.third-part {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
   </style>
 </head>
 <body>
+  <div class="flex-row-wrapper">
+    <div class="second-part">
+        <div class="lorem-text">Lorem ipsum dolor sit amet...</div>
+    </div>
+    <div class="third-part">
+        <!-- icons, actions, etc. -->
+    </div>
+</div>
+<br><br><br><br><br>
   <div class="responsive-container">
     <table border="1">
    <tr>
