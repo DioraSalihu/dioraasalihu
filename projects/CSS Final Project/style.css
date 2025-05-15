@@ -3,7 +3,9 @@
     --primary-color: grey;
     --secondary-color: white;
     --terciary-color: rgb(11, 136, 11);
+    --fourth-color:black;
 }
+
 .wrapper {
     height: 100vh;
     overflow-y: scroll;
@@ -94,11 +96,12 @@ aside {
     border-radius: 3px;
     padding-left: 15px;
     color: var(--secondary-color);
-
 }
+
 .dashboard:hover{
     cursor: pointer;
 }
+
 h1 {
     display: flex;
     color: var(--secondary-color);
@@ -122,7 +125,6 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
 }
 
 .more-vert-icon {
@@ -149,7 +151,7 @@ header {
     top: 80%;
     left: 50%;
     transform: translateX(10%);
-    background-color: black;
+    background-color: var(--fourth-color);
     color: var(--secondary-color);
     padding: 5px 10px;
     font-size: 12px;
@@ -197,8 +199,8 @@ header {
     top: 80%;
     left: 50%;
     transform: translateX(10%);
-    background-color: black;
-    color: white;
+    background-color: var(--fourth-color);
+    color: var(--secondary-color);
     padding: 5px 10px;
     font-size: 12px;
     opacity: 0;
@@ -232,6 +234,11 @@ header {
     font-size: 12px;
 }
 
+.search-bar-input::placeholder{
+    color:grey;
+    font-size: 15px;
+}
+
 .search-bar {
     display: flex;
 }
@@ -252,19 +259,18 @@ header {
     cursor: pointer;
 }
 
-.position {
+.bell {
     position: relative;
     display: inline-block;
-    
 }
 
-.position::after {
+.bell::after {
     content: attr(tooltip);
     position: absolute;
     top: 120%;
     left: 50%;
     transform: translateX(-10%);
-    background-color: black;
+    background-color: var(--fourth-color);
     color: var(--secondary-color);
     padding: 5px 10px;
     font-size: 12px;
@@ -275,7 +281,7 @@ header {
     white-space: nowrap;
 }
 
-.position:hover::after {
+.bell:hover::after {
     opacity: 1;
     visibility: visible;
     transition: opacity 0s ease-in;
@@ -317,7 +323,7 @@ header {
     color: var(--secondary-color);
 }
 
-.position:focus .hidden-border {
+.bell:focus .hidden-border {
     display: inline-block;
 }
 
@@ -349,7 +355,7 @@ button {
     top: 120%;
     left: 50%;
     transform: translateX(-10%);
-    background-color: black;
+    background-color: var(--fourth-color);
     color: var(--secondary-color);
     padding: 5px 10px;
     font-size: 12px;
@@ -377,7 +383,7 @@ button {
     top: 120%;
     left: 50%;
     transform: translateX(-25%);
-    background-color: black;
+    background-color: var(--fourth-color);
     color: var(--secondary-color);
     padding: 5px 10px;
     font-size: 12px;
@@ -405,7 +411,7 @@ button {
     top: 120%;
     left: 50%;
     transform: translateX(-25%);
-    background-color: black;
+    background-color: var(--fourth-color);
     color: var(--secondary-color);
     padding: 5px 10px;
     font-size: 12px;
@@ -545,6 +551,17 @@ iframe {
     margin-top: 80px;
 }
 
+.first-part {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.the-text {
+    display: flex;
+    flex-direction: column;
+}
+
 .weekend {
     position: absolute;
     border: 1px;
@@ -561,17 +578,6 @@ iframe {
     -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
     -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
     box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-}
-
-.first-part {
-    display: flex;
-    justify-content: flex-end;
-    margin-bottom: 15px;
-}
-
-.the-text {
-    display: flex;
-    flex-direction: column;
 }
 
 .equalizer {
@@ -637,7 +643,6 @@ iframe {
 .number {
     font-size: 30px;
     padding-top: 10px;
-
 }
 
 .headline {
@@ -663,7 +668,6 @@ iframe {
 .card {
     border-radius: 5px;
     background-color: var(--secondary-color);
-    height: 370px;
     margin-top: 60px;
     border-radius: 4px;
     padding: 15px;
@@ -703,13 +707,14 @@ iframe {
     display: flex;
     font-size: 17px;
     text-align: center;
-    
+    padding-bottom: 80px;
 }
 
 #second-part {
     display: flex;
     font-size: 17px;
     text-align: center;
+    padding-bottom: 35px;
 }
 
 .photo-part {
@@ -735,12 +740,14 @@ iframe {
     justify-content: space-between;
    
 }
+
 .part-container{
     width: 89%;
     position: absolute;
     bottom: 0;
     padding-bottom: 7px;
 }
+
 .lorem-text {
     font-size: clamp(14px, 1vw, 10px);
     margin-top: -35px;
@@ -771,9 +778,13 @@ footer {
     padding-top: 35px;
 }
 
-.alone {
+.footer-text {
     padding-right: 20px;
     font-weight: bold;
+}
+
+.footer-text:hover{
+    cursor: pointer;
 }
 
 .art-track .material-icons {
@@ -794,8 +805,8 @@ footer {
     bottom: -120%;
     left: 50%;
     transform: translateX(-80%);
-    background-color: black;
-    color: white;
+    background-color: var(--fourth-color);
+    color: var(--secondary-color);
     padding: 5px 10px;
     font-size: 12px;
     opacity: 0;
@@ -829,8 +840,8 @@ footer {
     bottom: -120%;
     left: 50%;
     transform: translateX(-40%);
-    background-color: black;
-    color: white;
+    background-color: var(--fourth-color);
+    color: var(--secondary-color);
     padding: 5px 10px;
     font-size: 12px;
     opacity: 0;
@@ -864,8 +875,8 @@ footer {
     bottom: -120%;
     left: 50%;
     transform: translateX(30%);
-    background-color: black;
-    color: white;
+    background-color: var(--fourth-color);
+    color: var(--secondary-color);
     padding: 5px 10px;
     font-size: 12px;
     opacity: 0;
@@ -886,13 +897,11 @@ footer {
 }
 
 h4 {
-    color: black;
+    color: var(--fourth-color);
     font-weight: 400;
     font-size: 20px;
 }
-.alone:hover{
-cursor: pointer;
-}
+
 
 
 @media only screen and (max-width: 1090px) {
@@ -925,7 +934,6 @@ cursor: pointer;
         flex-direction: column;
         padding: 20px;
         padding-top: 90px;
-
     }
 
     .global-sales {
@@ -938,7 +946,6 @@ cursor: pointer;
         width: 100%;
         height: 240px;
     }
-
 
     iframe {
         padding-top: 30px;
@@ -954,13 +961,14 @@ cursor: pointer;
         margin-top: 80px;
         width: auto;
     }
+
     .listings{
         display: grid;
         grid-template-columns: repeat(2,1fr);
     }
+
     .part-container{
         width: 93%;
-     
     }
 
 }
@@ -979,12 +987,15 @@ cursor: pointer;
         max-width:100%;
         height: 195px;
     }
+
     .card{
         width: 91%;
     }
+
     .photo-part{
         width: 100%;
     }
+
     main {
         overflow-x: hidden;
     }
@@ -1024,8 +1035,15 @@ cursor: pointer;
         row-gap: 30px;
         flex-direction: column;
     }
+
     .hidden-icons{
         margin-left: 50%;
     }
-
+    
+    #second-part {
+        display: flex;
+        font-size: 17px;
+        text-align: center;
+        padding-bottom: 70px;
+    }
 }

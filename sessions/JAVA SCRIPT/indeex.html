@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let username = 'admin';
+        let email = 'admin@gmail.com'
+        let password = '12341234'
+
+        let input = prompt('Enter your username:')
+        let emailInput = prompt('Enter email:')
+        let passInput = prompt('Enter password:')
+
+
+        if ((input == username) || (emailInput == email) && passInput == password){
+            console.log('Welcome')
+        }
+        else{
+            console.log('You have to register first')
+        }
+    </script>
+</body>
+</html>

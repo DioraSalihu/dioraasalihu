@@ -10,1046 +10,1045 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700">
     <style>
         :root {
-            --main-bg-color: rgb(231, 231, 231);
-            --primary-color: grey;
-            --secondary-color: white;
-            --terciary-color: rgb(11, 136, 11);
-        }
-        .wrapper {
-            height: 100vh;
-            overflow-y: scroll;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            overflow-y: hidden;
-            display: grid;
-            grid-template-columns: 280px 1fr;
-            font-family: 'Roboto', 'sans-serif';
-            background-color: var(--main-bg-color);
-            overflow-x: hidden;
-            box-sizing: border-box;
-            width: 100vw;
-        }
-
-        aside {
-            display: flex;
-            flex-direction: column;
-            overflow-y: auto;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/sidebar-1.jpg);
-            background-size: cover;
-            height: 100vh;
-            width: 280px;
-            grid-column: 1/2;
-            grid-row: 1/4;
-        }
-
-        .avatar img {
-            width: 45px;
-            height: 45px;
-            border-radius: 45px;
-            margin-right: 10px;
-        }
-
-        .side-bar {
-            margin: 0 10px 0 10px;
-        }
-
-        .aside-headline {
-            height: 50px;
-            align-items: center;
-            display: flex;
-            color: var(--secondary-color);
-            padding-top: 5px;
-            padding-bottom: 5px;
-            padding-left: 5px;
-            margin-top: 5px;
-            justify-content: space-between;
-        }
-
-        .aside-titles {
-            height: 50px;
-            display: flex;
-            color: var(--secondary-color);
-            padding-left: 15px;
-            align-items: center;
-            margin-top: 5px;
-            justify-content: space-between;
-        }
-
-        .arrow {
-            padding-right: 15px;
-        }
-
-        .wrap {
-            display: flex;
-            align-items: center;
-        }
-
-        .aside-titles:hover {
-            background-color: rgba(70, 67, 67, 0.664);
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        .the-dashboard {
-            padding-left: 20px;
-        }
-
-        .dashboard {
-            align-items: center;
-            height: 50px;
-            display: flex;
-            background-color: orangered;
-            border-radius: 3px;
-            padding-left: 15px;
-            color: var(--secondary-color);
-
-        }
-
-        h1 {
-            display: flex;
-            color: var(--secondary-color);
-            justify-content: flex-start;
-            font-weight: 200;
-            margin-left: 10px;
-        }
-
-        .other-part {
-            padding-left: 20px;
-        }
-
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin: 30px 30px 0 30px;
-
-        }
-
-        .dashboard-button {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-
-        }
-
-        .more-vert-icon {
-            display: inline-block;
-            position: relative;
-            width: 50px;
-            height: 50px;
-            border: 1px;
-            border-radius: 35px;
-            background-color: var(--secondary-color);
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            color: var(--primary-color);
-            -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
-            -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
-            box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
-            margin-right: 20px;
-        }
-
-        .more-vert-icon::after {
-            content: attr(tooltip);
-            position: absolute;
-            top: 80%;
-            left: 50%;
-            transform: translateX(10%);
-            background-color: black;
-            color: var(--secondary-color);
-            padding: 5px 10px;
-            font-size: 12px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.2s ease-out;
-            transition-duration: 2s;
-            white-space: nowrap;
-        }
-
-        .more-vert-icon:hover::after {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0s ease-in;
-        }
-
-        .more-vert-icon:hover {
-            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.53);
-            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.53);
-            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.53);
-            cursor: pointer;
-        }
-
-        .search-icon {
-            display: inline-block;
-            position: relative;
-            width: 50px;
-            height: 50px;
-            border: 1px;
-            background-color: var(--secondary-color);
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            color: var(--primary-color);
-            -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
-            -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
-            box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
-            border-radius: 50px;
-            margin-right: 20px;
-        }
-
-        .search-icon::after {
-            content: attr(tooltip);
-            position: absolute;
-            top: 80%;
-            left: 50%;
-            transform: translateX(10%);
-            background-color: black;
-            color: white;
-            padding: 5px 10px;
-            font-size: 12px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.2s ease-out;
-            transition-duration: 2s;
-            white-space: nowrap;
-        }
-
-        .search-icon:hover {
-            -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.53);
-            -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.53);
-            box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.53);
-            cursor: pointer;
-
-        }
-
-        .search-icon:hover::after {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0s ease-in;
-        }
-
-        .search-bar-input {
-            padding-top: 30px;
-            outline: none;
-            border-top: 1px;
-            border-left: 1px;
-            border-right: 1px;
-            background-color: var(--main-bg-color);
-            font-size: 12px;
-        }
-
-        .search-bar {
-            display: flex;
-            justify-content: space-around;
-        }
-
-        .search-bar-input:focus {
-            border-color: purple;
-
-        }
-
-        .icons {
-            color: rgb(73, 73, 73);
-            padding-left: 30px;
-        }
-
-        .right-icons {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .position {
-            position: relative;
-            display: inline-block;
-        }
-
-        .position::after {
-            content: attr(tooltip);
-            position: absolute;
-            top: 120%;
-            left: 50%;
-            transform: translateX(-10%);
-            background-color: black;
-            color: var(--secondary-color);
-            padding: 5px 10px;
-            font-size: 12px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.2s ease-out;
-            transition-duration: 2s;
-            white-space: nowrap;
-        }
-
-        .position:hover::after {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0s ease-in;
-        }
-
-        .hidden-border {
-            position: absolute;
-            z-index: 10;
-            background-color: var(--secondary-color);
-            transform: translateX(-100%);
-            top: -7px;
-            border: 1px;
-            border-radius: 2px;
-            width: 250px;
-            height: 195px;
-            display: flex;
-            flex-direction: column;
-            padding: 4px;
-            display: none;
-            -webkit-box-shadow: 0px 0px 12px -4px rgb(0, 0, 0, 0.53);
-            -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
-            box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
-        }
-
-        .option {
-            font-size: 15px;
-            background-color: var(--secondary-color);
-            width: 235px;
-            height: 37px;
-            display: flex;
-            align-items: center;
-            margin-top: 2px;
-            border-radius: 2px;
-            padding-left: 15px;
-        }
-
-        .option:hover {
-            background-color: orangered;
-            color: var(--secondary-color);
-        }
-
-        .position:focus .hidden-border {
-            display: inline-block;
-        }
-
-        button {
-            font-size: 10px;
-            width: 14px;
-            height: 14px;
-            border: 1px solid var(--secondary-color);
-            border-radius: 14px;
-            background-color: red;
-            color: var(--secondary-color);
-            position: absolute;
-            top: 0;
-            right: 0;
-            justify-content: center;
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-        }
-
-        .square {
-            position: relative;
-            display: inline-block;
-        }
-
-        .square::after {
-            content: attr(tooltip);
-            position: absolute;
-            top: 120%;
-            left: 50%;
-            transform: translateX(-10%);
-            background-color: black;
-            color: var(--secondary-color);
-            padding: 5px 10px;
-            font-size: 12px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease-out;
-            transition-duration: 2s;
-            white-space: nowrap;
-        }
-
-        .square:hover::after {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0s ease-in;
-        }
-
-        .person {
-            position: relative;
-            display: inline-block;
-        }
-
-        .person::after {
-            content: attr(tooltip);
-            position: absolute;
-            top: 120%;
-            left: 50%;
-            transform: translateX(-25%);
-            background-color: black;
-            color: var(--secondary-color);
-            padding: 5px 10px;
-            font-size: 12px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease-out;
-            transition-duration: 2s;
-            white-space: nowrap;
-        }
-
-        .person:hover::after {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0s ease-in;
-        }
-
-        .dehaze-icon {
-            display: none;
-            position: relative;
-        }
-
-        .dehaze-icon::after {
-            content: attr(tooltip);
-            position: absolute;
-            top: 120%;
-            left: 50%;
-            transform: translateX(-25%);
-            background-color: black;
-            color: var(--secondary-color);
-            padding: 5px 10px;
-            font-size: 12px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease-out;
-            transition-duration: 2s;
-            white-space: nowrap;
-        }
-
-        .dehaze-icon:hover::after {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0s ease-in;
-        }
-
-        main {
-            margin: 0 30px 0 30px;
-            overflow-y: hidden;
-            overflow-x: hidden;
-
-        }
-
-        table {
-            border: none;
-            border-bottom: 1px solid grey;
-            border-top: transparent;
-            border-left: transparent;
-            border-right: transparent;
-        }
-
-        .language {
-            border: 1px;
-            width: 70px;
-            height: 70px;
-            background-color: var(--terciary-color);
-            color: var(--secondary-color);
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            border-radius: 2px;
-            -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-            -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-            box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-        }
-
-        .description {
-            border-collapse: collapse;
-            border-style: hidden;
-            margin-right: 20px;
-            height: 240px;
-            width: 30%;
-        }
-
-        iframe {
-            width: 70%;
-            height: 240px;
-        }
-
-        .columns {
-            padding-left: 10px;
-        }
-
-        .flag {
-            width: 20px;
-            height: 15px;
-            border-radius: 0;
-            padding-right: 10px;
-        }
-
-        .global-sales {
-            background-color: var(--secondary-color);
-            border-radius: 4px;
-            position: relative;
-            height: 350px;
-            margin-top: 60px;
-        }
-
-        .text {
-            font-size: 23px;
-            padding-left: 10px;
-            padding-top: 20px;
-            font-weight: 300;
-        }
-
-        .locations {
-            display: flex;
-            padding: 20px;
-            padding-top: 90px;
-        }
-
-        .subtitle {
-            display: flex;
-            align-items: center;
-            position: absolute;
-            top: -15px;
-            left: 20px;
-        }
-
-        .bookings {
-            padding: 20px;
-            height: 100px;
-            background-color: var(--secondary-color);
-            border-radius: 4px;
-            position: relative;
-        }
-
-        .website {
-            padding: 20px;
-            height: 100px;
-            background-color: var(--secondary-color);
-            border-radius: 4px;
-            position: relative;
-        }
-
-        .revenue {
-            padding: 20px;
-            height: 100px;
-            background-color: var(--secondary-color);
-            border-radius: 4px;
-            position: relative;
-        }
-
-        .social-media {
-            padding: 20px;
-            height: 100px;
-            background-color: var(--secondary-color);
-            border-radius: 4px;
-            position: relative;
-        }
-
-        .statistics {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-            column-gap: 30px;
-            row-gap: 30px;
-            margin-top: 80px;
-            width: 916px;
-        }
-
-        .weekend {
-            position: absolute;
-            border: 1px;
-            width: 70px;
-            height: 70px;
-            background-color: rgb(255, 149, 0);
-            color: var(--secondary-color);
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            border-radius: 2px;
-            top: -15px;
-            left: 20px;
-            -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-            -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-            box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-        }
-
-        .first-part {
-            display: flex;
-            justify-content: flex-end;
-            margin-bottom: 15px;
-        }
-
-        .the-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .equalizer {
-            position: absolute;
-            border: 1px;
-            width: 70px;
-            height: 70px;
-            background-color: rgb(223, 20, 131);
-            color: var(--secondary-color);
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            border-radius: 2px;
-            top: -15px;
-            left: 20px;
-            -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-            -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-            box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-        }
-
-        .store {
-            position: absolute;
-            border: 1px;
-            width: 70px;
-            height: 70px;
-            background-color: var(--terciary-color);
-            color: var(--secondary-color);
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            border-radius: 2px;
-            top: -15px;
-            left: 20px;
-            -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-            -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-            box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-        }
-
-        .public {
-            position: absolute;
-            border: 1px;
-            width: 70px;
-            height: 70px;
-            background-color: rgb(57, 165, 231);
-            color: var(--secondary-color);
-            justify-content: center;
-            align-items: center;
-            display: flex;
-            border-radius: 2px;
-            top: -15px;
-            left: 20px;
-            -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-            -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-            box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
-        }
-
-        .symbol {
-            font-size: 3px;
-        }
-
-        .listings {
-            display: grid;
-            grid-template-columns: repeat(3, 31%);
-            column-gap: 30px;
-        }
-
-        .number {
-            font-size: 30px;
-            padding-top: 10px;
-
-        }
-
-        .headline {
-            padding-top: 70px;
-            font-size: 25px;
-        }
-
-        .note {
-            display: flex;
-            align-content: center;
-            color: var(--primary-color);
-        }
-
-        .font .material-icons {
-            font-size: 13px;
-        }
-
-        .other-side {
-            padding-left: 5px;
-            font-size: 13px;
-        }
-
-        .card {
-            border-radius: 5px;
-            background-color: var(--secondary-color);
-            height: 370px;
-            margin-top: 60px;
-            border-radius: 4px;
-            padding: 15px;
-            padding-bottom: 0;
-            position: relative;
-        }
-
-        @keyframes Go-up {
-            from {
-                transform: translateY(0);
-            }
-
-            to {
-                transform: translateY(-40px);
-
-            }
-        }
-
-        .photo-part:hover .photos img {
-            animation-name: Go-up;
-            animation-duration: 1s;
-            transform: translateY(-40px);
-            cursor: pointer;
-        }
-
-        .photo-part:hover .hidden-icons {
-            opacity: 1;
-            transition: opacity 2s;
-        }
-
-        .photo-part .hidden-icons {
-            opacity: 0;
-            transition: opacity 0s ease;
-        }
-
-        .second-part {
-            display: flex;
-            font-size: 17px;
-            text-align: center;
-           
-        }
-
-        #second-part {
-            display: flex;
-            font-size: 17px;
-            text-align: center;
-            
-        }
-
-        .photo-part {
-            width: 100%;
-            height: 170px;
-            position: relative;
-        }
-
-        .photos img {
-            border-radius: 5px;
-            width: 100%;
-            height: 190px;
-            margin-top: -45px;
-            animation-name: Go-up;
-            transition: transform 1s ease; 
-            position: relative;
-            z-index: 10;
-        }
-
-        .third-part {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            
-        }
-        .part-container{
-            width: 89%;
-            position: absolute;
-            bottom: 0;
-            padding-bottom: 5px;
-        }
-        .lorem-text {
-            font-size: clamp(13px, 1vw, 10px);
-            margin-top: -35px;
-            color: var(--primary-color);  
-        }
-        
-        .hidden-icons {
-            display: flex;
-            justify-content: center;
-            cursor: pointer;
-            transition: opacity 0.5s ease 0.5s;
-            transform: translateX(-50%);
-            margin-left: 130px;
-            margin-top: -30px;
-            margin-bottom: 10px;
-            opacity: 0;
-            position: absolute;
-        }
-
-        footer {
-            margin: 0 30px 0 30px;
-            height: 150px;
-        }
-
-        .the-end {
-            display: flex;
-            justify-content: space-between;
-            padding-top: 35px;
-        }
-
-        .alone {
-            padding-right: 20px;
-            font-weight: bold;
-        }
-
-        .art-track .material-icons {
-            color: var(--primary-color);
-            padding-right: 5px;
-            font-size: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .art-track:hover {
-            cursor: pointer;
-        }
-
-        .art-track::after {
-            content: attr(tooltip);
-            position: absolute;
-            bottom: -120%;
-            left: 50%;
-            transform: translateX(-80%);
-            background-color: black;
-            color: white;
-            padding: 5px 10px;
-            font-size: 12px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0s ease-out;
-            transition-duration: 2s;
-            white-space: nowrap;
-        }
-
-        .art-track:hover::after {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0s ease-in;
-        }
-
-        .edit .material-icons {
-            color: var(--terciary-color);
-            padding-left: 5px;
-            font-size: 20px;
-            position: relative;
-            display: inline-block;
-        }
-
-        .edit:hover {
-            cursor: pointer;
-        }
-
-        .edit::after {
-            content: attr(tooltip);
-            position: absolute;
-            bottom: -120%;
-            left: 50%;
-            transform: translateX(-40%);
-            background-color: black;
-            color: white;
-            padding: 5px 10px;
-            font-size: 12px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0s ease-out;
-            transition-duration: 2s;
-            white-space: nowrap;
-        }
-
-        .edit:hover::after {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0s ease-in;
-        }
-
-        .clear .material-icons {
-            color: red;
-            padding-left: 5px;
-            font-size: 20px;
-            display: inline-block;
-            position: relative;
-        }
-
-        .clear:hover {
-            cursor: pointer;
-        }
-
-        .clear::after {
-            content: attr(tooltip);
-            position: absolute;
-            bottom: -120%;
-            left: 50%;
-            transform: translateX(30%);
-            background-color: black;
-            color: white;
-            padding: 5px 10px;
-            font-size: 12px;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0s ease-out;
-            transition-duration: 2s;
-            white-space: nowrap;
-        }
-
-        .clear:hover::after {
-            opacity: 1;
-            visibility: visible;
-            transition: opacity 0s ease-in;
-        }
-
-        .start {
-            color: var(--primary-color);
-        }
-
-        h4 {
-            color: black;
-            font-weight: 400;
-            font-size: 20px;
-        }
-        .alone:hover{
-        cursor: pointer;
-        }
-
-
-        @media only screen and (max-width: 1024px) {
-            .dehaze-icon {
-                display: inline-block;
-            }
-
-            body {
-                grid-template-columns: 1fr;
-            }
-
-            aside {
-                display: none;
-            }
-
-            .more-vert-icon {
-                display: none;
-            }
-
-            .icons {
-                display: none;
-            }
-
-            .search-bar {
-                display: none;
-            }
-
-            .locations {
-                display: flex;
-                flex-direction: column;
-                padding: 20px;
-                padding-top: 90px;
-
-            }
-
-            .global-sales {
-                height: 615px;
-                margin-top: 60px;
-
-            }
-
-            .description {
-                width: 100%;
-                height: 240px;
-            }
-
-
-            iframe {
-                padding-top: 30px;
-                width: 100%;
-            }
-
-            .statistics {
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                grid-template-rows: 1fr 1fr;
-                column-gap: 30px;
-                row-gap: 30px;
-                margin-top: 80px;
-                width: auto;
-            }
-
-            .listings {
-                grid-template-columns: 1fr 1fr;
-                display: grid;
-            }
-
-
-        }
-
-        @media only screen and (max-width: 600px) {
-
-            
-            .description,
-            iframe,
-            footer .global-sales {
-                width: 100%;
-                max-width: 100%;
-            }
-
-            .bookings,
-            .website,
-            .revenue,
-            .social-media {
-                width: 90%;
-                max-width: 90%;
-            }
-
-            .photos img {
-                width: 95%;
-                max-width: 95%;
-                background-color: black;
-            }
-            .card,
-            .photo-part{
-                width: fit-content;
-                max-width: 95%;
-            }
-            main {
-                overflow-x: hidden;
-            }
-
-            aside {
-                display: none;
-            }
-
-            .locations {
-                display: flex;
-                flex-direction: column;
-                padding: 20px;
-                padding-top: 90px;
-            }
-
-            .global-sales {
-                margin-top: 60px;
-            }
-
-            iframe {
-                padding-top: 20px;
-            }
-
-            .statistics {
-                display: grid;
-                grid-template-columns: 1fr;
-                grid-template-rows: repeat(4 1fr);
-                column-gap: 30px;
-                row-gap: 30px;
-                margin-top: 40px;
-            }
-
-            .listings {
-                width: 100%;
-                max-width: 100%;
-                display: flex;
-                row-gap: 30px;
-                flex-direction: column;
-            }
-
-
-        }
+    --main-bg-color: rgb(231, 231, 231);
+    --primary-color: grey;
+    --secondary-color: white;
+    --terciary-color: rgb(11, 136, 11);
+    --fourth-color:black;
+}
+
+.wrapper {
+    height: 100vh;
+    overflow-y: scroll;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-y: hidden;
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    font-family: 'Roboto', 'sans-serif';
+    background-color: var(--main-bg-color);
+    overflow-x: hidden;
+    box-sizing: border-box;
+    width: 100vw;
+}
+
+aside {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(images/sidebar-1.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 280px;
+    grid-column: 1/2;
+    grid-row: 1/4;
+}
+
+.avatar img {
+    width: 45px;
+    height: 45px;
+    border-radius: 45px;
+    margin-right: 10px;
+}
+
+.side-bar {
+    margin: 0 10px 0 10px;
+}
+
+.aside-headline {
+    height: 50px;
+    align-items: center;
+    display: flex;
+    color: var(--secondary-color);
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    margin-top: 5px;
+    justify-content: space-between;
+}
+
+.aside-titles {
+    height: 50px;
+    display: flex;
+    color: var(--secondary-color);
+    padding-left: 15px;
+    align-items: center;
+    margin-top: 5px;
+    justify-content: space-between;
+}
+
+.arrow {
+    padding-right: 15px;
+}
+
+.wrap {
+    display: flex;
+    align-items: center;
+}
+
+.aside-titles:hover {
+    background-color: rgba(70, 67, 67, 0.664);
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.the-dashboard {
+    padding-left: 20px;
+}
+
+.dashboard {
+    align-items: center;
+    height: 50px;
+    display: flex;
+    background-color: orangered;
+    border-radius: 3px;
+    padding-left: 15px;
+    color: var(--secondary-color);
+}
+
+.dashboard:hover{
+    cursor: pointer;
+}
+
+h1 {
+    display: flex;
+    color: var(--secondary-color);
+    justify-content: flex-start;
+    font-weight: 200;
+    margin-left: 10px;
+}
+
+.other-part {
+    padding-left: 20px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 30px 0 30px;
+}
+
+.dashboard-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.more-vert-icon {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 1px;
+    border-radius: 35px;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--primary-color);
+    -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
+    box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
+    margin-right: 20px;
+}
+
+.more-vert-icon::after {
+    content: attr(tooltip);
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(10%);
+    background-color: var(--fourth-color);
+    color: var(--secondary-color);
+    padding: 5px 10px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-out;
+    transition-duration: 2s;
+    white-space: nowrap;
+}
+
+.more-vert-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0s ease-in;
+}
+
+.more-vert-icon:hover {
+    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.53);
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.53);
+    cursor: pointer;
+}
+
+.search-icon {
+    display: inline-block;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border: 1px;
+    background-color: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    color: var(--primary-color);
+    -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
+    box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
+    border-radius: 50px;
+    margin-right: 5px;
+}
+
+.search-icon::after {
+    content: attr(tooltip);
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translateX(10%);
+    background-color: var(--fourth-color);
+    color: var(--secondary-color);
+    padding: 5px 10px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-out;
+    transition-duration: 2s;
+    white-space: nowrap;
+}
+
+.search-icon:hover {
+    -webkit-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.53);
+    -moz-box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.53);
+    box-shadow: 0px 0px 12px 1px rgba(0, 0, 0, 0.53);
+    cursor: pointer;
+
+}
+
+.search-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0s ease-in;
+}
+
+.search-bar-input {
+    padding-top: 30px;
+    outline: none;
+    border-top: 1px;
+    border-left: 1px;
+    border-right: 1px;
+    background-color: var(--main-bg-color);
+    font-size: 12px;
+}
+
+.search-bar {
+    display: flex;
+}
+
+.search-bar-input:focus {
+    border-color: purple;
+    border-width: 3px;
+}
+
+.icons {
+    color: rgb(73, 73, 73);
+    padding-left: 30px;
+}
+
+.right-icons {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.bell {
+    position: relative;
+    display: inline-block;
+}
+
+.bell::after {
+    content: attr(tooltip);
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-10%);
+    background-color: var(--fourth-color);
+    color: var(--secondary-color);
+    padding: 5px 10px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease-out;
+    transition-duration: 2s;
+    white-space: nowrap;
+}
+
+.bell:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0s ease-in;
+}
+
+.hidden-border {
+    position: absolute;
+    z-index: 10;
+    background-color: var(--secondary-color);
+    transform: translateX(-100%);
+    top: -7px;
+    border: 1px;
+    border-radius: 2px;
+    width: 250px;
+    height: 195px;
+    display: flex;
+    flex-direction: column;
+    padding: 4px;
+    display: none;
+    -webkit-box-shadow: 0px 0px 12px -4px rgb(0, 0, 0, 0.53);
+    -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
+    box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.53);
+}
+
+.option {
+    font-size: 15px;
+    background-color: var(--secondary-color);
+    width: 235px;
+    height: 37px;
+    display: flex;
+    align-items: center;
+    margin-top: 2px;
+    border-radius: 2px;
+    padding-left: 15px;
+}
+
+.option:hover {
+    background-color: orangered;
+    color: var(--secondary-color);
+}
+
+.bell:focus .hidden-border {
+    display: inline-block;
+}
+
+button {
+    font-size: 10px;
+    width: 14px;
+    height: 14px;
+    border: 1px solid var(--secondary-color);
+    border-radius: 14px;
+    background-color: red;
+    color: var(--secondary-color);
+    position: absolute;
+    top: 0;
+    right: 0;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.square {
+    position: relative;
+    display: inline-block;
+}
+
+.square::after {
+    content: attr(tooltip);
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-10%);
+    background-color: var(--fourth-color);
+    color: var(--secondary-color);
+    padding: 5px 10px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-out;
+    transition-duration: 2s;
+    white-space: nowrap;
+}
+
+.square:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0s ease-in;
+}
+
+.person {
+    position: relative;
+    display: inline-block;
+}
+
+.person::after {
+    content: attr(tooltip);
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-25%);
+    background-color: var(--fourth-color);
+    color: var(--secondary-color);
+    padding: 5px 10px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-out;
+    transition-duration: 2s;
+    white-space: nowrap;
+}
+
+.person:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0s ease-in;
+}
+
+.dehaze-icon {
+    display: none;
+    position: relative;
+}
+
+.dehaze-icon::after {
+    content: attr(tooltip);
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-25%);
+    background-color: var(--fourth-color);
+    color: var(--secondary-color);
+    padding: 5px 10px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-out;
+    transition-duration: 2s;
+    white-space: nowrap;
+}
+
+.dehaze-icon:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0s ease-in;
+}
+
+main {
+    margin: 0 30px 0 30px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+table {
+    border: none;
+    border-bottom: 1px solid grey;
+    border-top: transparent;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+.language {
+    border: 1px;
+    width: 70px;
+    height: 70px;
+    background-color: var(--terciary-color);
+    color: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 2px;
+    -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+    box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+}
+
+.description {
+    border-collapse: collapse;
+    border-style: hidden;
+    margin-right: 20px;
+    height: 240px;
+    width: 30%;
+}
+
+iframe {
+    width: 70%;
+    height: 240px;
+}
+
+.columns {
+    padding-left: 10px;
+}
+
+.flag {
+    width: 20px;
+    height: 15px;
+    border-radius: 0;
+    padding-right: 10px;
+}
+
+.global-sales {
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    position: relative;
+    height: 350px;
+    margin-top: 60px;
+}
+
+.text {
+    font-size: 23px;
+    padding-left: 10px;
+    padding-top: 20px;
+    font-weight: 300;
+}
+
+.locations {
+    display: flex;
+    padding: 20px;
+    padding-top: 90px;
+}
+
+.subtitle {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: -15px;
+    left: 20px;
+}
+
+.bookings {
+    padding: 20px;
+    height: 100px;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    position: relative;
+}
+
+.website {
+    padding: 20px;
+    height: 100px;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    position: relative;
+}
+
+.revenue {
+    padding: 20px;
+    height: 100px;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    position: relative;
+}
+
+.social-media {
+    padding: 20px;
+    height: 100px;
+    background-color: var(--secondary-color);
+    border-radius: 4px;
+    position: relative;
+}
+
+.statistics {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    column-gap: 30px;
+    row-gap: 30px;
+    margin-top: 80px;
+}
+
+.first-part {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+}
+
+.the-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.weekend {
+    position: absolute;
+    border: 1px;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(255, 149, 0);
+    color: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 2px;
+    top: -15px;
+    left: 20px;
+    -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+    box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+}
+
+.equalizer {
+    position: absolute;
+    border: 1px;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(223, 20, 131);
+    color: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 2px;
+    top: -15px;
+    left: 20px;
+    -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+    box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+}
+
+.store {
+    position: absolute;
+    border: 1px;
+    width: 70px;
+    height: 70px;
+    background-color: var(--terciary-color);
+    color: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 2px;
+    top: -15px;
+    left: 20px;
+    -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+    box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+}
+
+.public {
+    position: absolute;
+    border: 1px;
+    width: 70px;
+    height: 70px;
+    background-color: rgb(57, 165, 231);
+    color: var(--secondary-color);
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    border-radius: 2px;
+    top: -15px;
+    left: 20px;
+    -webkit-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+    -moz-box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+    box-shadow: 0px 0px 12px -4px rgba(0, 0, 0, 0.57);
+}
+
+.listings {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(185px, 1fr));
+    column-gap: 32px;
+}
+
+.number {
+    font-size: 30px;
+    padding-top: 10px;
+}
+
+.headline {
+    padding-top: 70px;
+    font-size: 25px;
+}
+
+.note {
+    display: flex;
+    align-content: center;
+    color: var(--primary-color);
+}
+
+.font .material-icons {
+    font-size: 13px;
+}
+
+.other-side {
+    padding-left: 5px;
+    font-size: 13px;
+}
+
+.card {
+    border-radius: 5px;
+    background-color: var(--secondary-color);
+
+    margin-top: 60px;
+    border-radius: 4px;
+    padding: 15px;
+    padding-bottom: 0;
+    position: relative;
+}
+
+@keyframes Go-up {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-40px);
+
+    }
+}
+
+.photo-part:hover .photos img {
+    animation-name: Go-up;
+    animation-duration: 1s;
+    transform: translateY(-40px);
+    cursor: pointer;
+}
+
+.photo-part:hover .hidden-icons {
+    opacity: 1;
+    transition: opacity 2s;
+}
+
+.photo-part .hidden-icons {
+    opacity: 0;
+    transition: opacity 0s ease;
+}
+
+.second-part {
+    display: flex;
+    font-size: 17px;
+    text-align: center;
+    padding-bottom: 60px;
+}
+
+#second-part {
+    display: flex;
+    font-size: 17px;
+    text-align: center;
+    padding-bottom: 38px;
+}
+
+.photo-part {
+    width: 100%;
+    height: 170px;
+    position: relative;
+}
+
+.photos img {
+    border-radius: 5px;
+    width: 100%;
+    height: 190px;
+    margin-top: -45px;
+    animation-name: Go-up;
+    transition: transform 1s ease; 
+    position: relative;
+    z-index: 10;
+}
+
+.third-part {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+   
+}
+
+.part-container{
+    width: 89%;
+    position: absolute;
+    bottom: 0;
+    padding-bottom: 7px;
+}
+
+.lorem-text {
+    font-size: clamp(14px, 1vw, 10px);
+    margin-top: -35px;
+    color: var(--primary-color);
+}
+
+.hidden-icons {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    transition: opacity 0.5s ease 0.5s;
+    transform: translateX(-50%);
+    margin-left: 50%;
+    margin-top: -30px;
+    margin-bottom: 10px;
+    opacity: 0;
+    position: absolute;
+}
+
+footer {
+    margin: 0 30px 0 30px;
+    height: 150px;
+}
+
+.the-end {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 35px;
+}
+
+.footer-text {
+    padding-right: 20px;
+    font-weight: bold;
+}
+
+.footer-text:hover{
+    cursor: pointer;
+}
+
+.art-track .material-icons {
+    color: var(--primary-color);
+    padding-right: 5px;
+    font-size: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.art-track:hover {
+    cursor: pointer;
+}
+
+.art-track::after {
+    content: attr(tooltip);
+    position: absolute;
+    bottom: -120%;
+    left: 50%;
+    transform: translateX(-80%);
+    background-color: var(--fourth-color);
+    color: var(--secondary-color);
+    padding: 5px 10px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0s ease-out;
+    transition-duration: 2s;
+    white-space: nowrap;
+}
+
+.art-track:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0s ease-in;
+}
+
+.edit .material-icons {
+    color: var(--terciary-color);
+    padding-left: 5px;
+    font-size: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.edit:hover {
+    cursor: pointer;
+}
+
+.edit::after {
+    content: attr(tooltip);
+    position: absolute;
+    bottom: -120%;
+    left: 50%;
+    transform: translateX(-40%);
+    background-color: var(--fourth-color);
+    color: var(--secondary-color);
+    padding: 5px 10px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0s ease-out;
+    transition-duration: 2s;
+    white-space: nowrap;
+}
+
+.edit:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0s ease-in;
+}
+
+.clear .material-icons {
+    color: red;
+    padding-left: 5px;
+    font-size: 20px;
+    display: inline-block;
+    position: relative;
+}
+
+.clear:hover {
+    cursor: pointer;
+}
+
+.clear::after {
+    content: attr(tooltip);
+    position: absolute;
+    bottom: -120%;
+    left: 50%;
+    transform: translateX(30%);
+    background-color: var(--fourth-color);
+    color: var(--secondary-color);
+    padding: 5px 10px;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0s ease-out;
+    transition-duration: 2s;
+    white-space: nowrap;
+}
+
+.clear:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0s ease-in;
+}
+
+.start {
+    color: var(--primary-color);
+}
+
+h4 {
+    color: var(--fourth-color);
+    font-weight: 400;
+    font-size: 20px;
+}
+
+
+
+@media only screen and (max-width: 1090px) {
+    .dehaze-icon {
+        display: inline-block;
+    }
+
+    body {
+        grid-template-columns: 1fr;
+    }
+
+    aside {
+        display: none;
+    }
+
+    .more-vert-icon {
+        display: none;
+    }
+
+    .icons {
+        display: none;
+    }
+
+    .search-bar {
+        display: none;
+    }
+
+    .locations {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        padding-top: 90px;
+    }
+
+    .global-sales {
+        height: 615px;
+        margin-top: 60px;
+
+    }
+
+    .description {
+        width: 100%;
+        height: 240px;
+    }
+
+    iframe {
+        padding-top: 30px;
+        width: 100%;
+    }
+
+    .statistics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        column-gap: 30px;
+        row-gap: 30px;
+        margin-top: 80px;
+        width: auto;
+    }
+
+    .listings{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .part-container{
+        width: 93%;
+    }
+
+}
+
+@media only screen and (max-width: 600px) {
+
+    .description,
+    iframe,
+    footer .global-sales {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .photos img {
+        width: 100%;
+        max-width:100%;
+        height: 195px;
+    }
+
+    .card{
+        width: 91%;
+    }
+
+    .photo-part{
+        width: 100%;
+    }
+
+    main {
+        overflow-x: hidden;
+    }
+
+    aside {
+        display: none;
+    }
+
+    .locations {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        padding-top: 90px;
+    }
+
+    .global-sales {
+        margin-top: 60px;
+    }
+
+    iframe {
+        padding-top: 20px;
+    }
+
+    .statistics {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4 1fr);
+        column-gap: 30px;
+        row-gap: 30px;
+        margin-top: 40px;
+    }
+
+    .listings {
+        width: 100%;
+        max-width: 100%;
+        display: flex;
+        row-gap: 30px;
+        flex-direction: column;
+    }
+
+    .hidden-icons{
+        margin-left: 50%;
+    }
+
+}
     </style>
 </head>
 
@@ -1065,9 +1064,14 @@
             <hr>
             <div class="aside-headline">
                 <span class="wrap">
-                    <span class="avatar"><img src="/projects/CSS Final Project/images/avatar.jpg" alt="avatar"></span>
-                    <span>John Doe</span></span>
-                <div class="arrow"><span class="material-icons">expand_more</span></div>
+                    <span class="avatar">
+                        <img src="/projects/CSS Final Project/images/avatar.jpg" alt="avatar">
+                    </span>
+                    <span>John Doe</span>
+                </span>
+                <div class="arrow">
+                    <span class="material-icons">expand_more</span>
+                </div>
             </div>
             <hr>
             <div class="dashboard">
@@ -1082,7 +1086,9 @@
                     <span class="material-icons">image</span>
                     <span class="the-dashboard">Pages</span>
                 </span>
-                <div class="arrow"><span class="material-icons">expand_more</span></div>
+                <div class="arrow">
+                    <span class="material-icons">expand_more</span>
+                </div>
             </div>
 
             <div class="aside-titles">
@@ -1090,43 +1096,53 @@
                     <span class="material-icons">apps</span>
                     <span class="the-dashboard">Components</span>
                 </span>
-                <div class="arrow"><span class="material-icons">expand_more</span></div>
+                <div class="arrow">
+                    <span class="material-icons">expand_more</span>
+                </div>
             </div>
             <div class="aside-titles">
                 <span class="wrap">
                     <span class="material-icons">
                         content_paste
                     </span>
-                    <span class="the-dashboard">Forms</span></span>
-
-                <div class="arrow"><span class="material-icons">expand_more</span></div>
+                    <span class="the-dashboard">Forms</span>
+                </span>
+                <div class="arrow">
+                    <span class="material-icons">expand_more</span>
+                </div>
             </div>
             <div class="aside-titles">
                 <span class="wrap">
                     <span class="material-icons">
                         grid_on
                     </span>
-                    <span class="the-dashboard">Tables</span></span>
-
-                <div class="arrow"><span class="material-icons">expand_more</span></div>
+                    <span class="the-dashboard">Tables</span>
+                </span>
+                <div class="arrow">
+                    <span class="material-icons">expand_more</span>
+                </div>
             </div>
             <div class="aside-titles">
-                <span class="wrap"><span class="material-icons">
+                <span class="wrap">
+                    <span class="material-icons">
                         location_on
                     </span>
-                    <span class="the-dashboard">Maps</span></span>
-
-
-                <div class="arrow"><span class="material-icons">expand_more</span></div>
+                    <span class="the-dashboard">Maps</span>
+                </span>
+                <div class="arrow">
+                    <span class="material-icons">expand_more</span>
+                </div>
             </div>
             <div class="aside-titles">
                 <span class="wrap">
                     <span class="material-icons">
                         widgets
                     </span>
-                    <span class="the-dashboard">Widgets</span></span>
-
-                <div class="arrow"><span class="material-icons">expand_more</span></div>
+                    <span class="the-dashboard">Widgets</span>
+                </span>
+                <div class="arrow">
+                    <span class="material-icons">expand_more</span>
+                </div>
             </div>
             <div class="aside-titles">
                 <span class="wrap">
@@ -1135,7 +1151,6 @@
                     </span>
                     <span class="the-dashboard">Charts</span>
                 </span>
-
                 <div class="arrow"><span class="material-icons">expand_more</span></div>
             </div>
             <div class="aside-titles">
@@ -1145,7 +1160,6 @@
                     </span>
                     <span class="the-dashboard">Calendar</span>
                 </span>
-
                 <div class="arrow"><span class="material-icons">expand_more</span></div>
             </div>
         </div>
@@ -1153,9 +1167,11 @@
     <div class="wrapper">
         <header>
             <div class="dashboard-button">
-                <span class="more-vert-icon" tooltip="See More"><span class="material-icons">
+                <span class="more-vert-icon" tooltip="See More">
+                    <span class="material-icons">
                         more_vert
-                    </span></span>
+                    </span>
+                </span>
                 <span>Dashboard</span>
             </div>
             <div class="right-icons">
@@ -1169,10 +1185,12 @@
 
 
                 <span class="icons">
-                    <span class="square" tooltip="Dashboard"><span class="material-icons">dashboard</span></span>
+                    <span class="square" tooltip="Dashboard">
+                        <span class="material-icons">dashboard</span>
+                    </span>
                 </span>
                 <span class="icons">
-                    <span class="position" tooltip="Notifications" tabindex="0">
+                    <span class="bell" tooltip="Notifications" tabindex="0">
                         <span class="material-icons">notifications</span>
                         <button>5</button>
                         <div>
@@ -1187,14 +1205,15 @@
                     </span>
                 </span>
                 <span class="icons">
-                    <span class="person" tooltip="Profile"><span class="material-icons">person</span></span>
-
+                    <span class="person" tooltip="Profile">
+                        <span class="material-icons">person</span>
+                    </span>
                 </span>
-                <span class="dehaze-icon" tooltip="Menu"><span class="material-icons" id="dehaze">
+                <span class="dehaze-icon" tooltip="Menu">
+                    <span class="material-icons" id="dehaze">
                         dehaze
                     </span>
                 </span>
-
             </div>
         </header>
         <main>
@@ -1249,7 +1268,9 @@
             <div class="statistics">
                 <div class="bookings">
                     <span class="first-part">
-                        <span class="weekend"><span class="material-icons">weekend</span></span>
+                        <span class="weekend">
+                            <span class="material-icons">weekend</span>
+                        </span>
                         <span class="the-text">
                             <span class="start">Bookings </span>
                             <span class="number">184</span>
@@ -1265,7 +1286,9 @@
                 </div>
                 <div class="website">
                     <span class="first-part">
-                        <span class="equalizer"><span class="material-icons">equalizer</span></span>
+                        <span class="equalizer">
+                            <span class="material-icons">equalizer</span>
+                        </span>
                         <span class="the-text">
                             <span class="start">Website Visits </span>
                             <span class="number">75.521</span>
@@ -1281,7 +1304,9 @@
                 </div>
                 <div class="revenue">
                     <span class="first-part">
-                        <span class="store"><span class="material-icons">store</span></span>
+                        <span class="store">
+                            <span class="material-icons">store</span>
+                        </span>
                         <span class="the-text">
                             <span class="start">Revenue</span>
                             <span class="number"> $34,245</span>
@@ -1298,7 +1323,9 @@
                 <div class="social-media">
                     <span class="first-part">
                         <span class="the-text">
-                            <span class="public"><span class="material-icons">public</span></span>
+                            <span class="public">
+                                <span class="material-icons">public</span>
+                            </span>
                             <span class="start">Followers </span>
                             <span class="number">+245</span>
                         </span>
@@ -1313,7 +1340,9 @@
                 </div>
             </div>
 
-            <div class="headline"><span>Manage Listings</span></div>
+            <div class="headline">
+                <span>Manage Listings</span>
+            </div>
 
             <div class="listings">
                 <div class="card">
@@ -1327,7 +1356,7 @@
                             <span class="clear" tooltip="Delete"><span class="material-icons">clear</span></span>
                         </span>
                     </div>
-                    
+
                     <div class="second-part">
                         <span class="lorem-text">
                             <h4>Cozy 5 Stars Apartment</h4>
@@ -1338,17 +1367,17 @@
                         <br><br><br><br>
                     </div>
                     <div class="part-container">
-                    <hr>
-                    <div class="third-part">
-                        <span>$899/night</span>
-                        <span class="note">
-                            <span class="font">
-                                <span class="material-icons">location_on</span>
+                        <hr>
+                        <div class="third-part">
+                            <span>$899/night</span>
+                            <span class="note">
+                                <span class="font">
+                                    <span class="material-icons">location_on</span>
+                                </span>
+                                <span class="other-side">Barcelona, Spain</span>
                             </span>
-                            <span class="other-side">Barcelona, Spain</span>
-                        </span>
+                        </div>
                     </div>
-                   </div>
                 </div>
 
 
@@ -1363,7 +1392,7 @@
                             <span class="clear" tooltip="Delete"><span class="material-icons">clear</span></span>
                         </span>
                     </div>
-                    
+
                     <div id="second-part">
                         <span class="lorem-text">
                             <h4>Office Studio</h4>
@@ -1374,17 +1403,17 @@
                         <br><br><br><br>
                     </div>
                     <div class="part-container">
-                    <hr>
-                    <div class="third-part">
-                        <span>$1.119/night</span>
-                        <span class="note">
-                            <span class="font">
-                                <span class="material-icons">location_on</span>
+                        <hr>
+                        <div class="third-part">
+                            <span>$1.119/night</span>
+                            <span class="note">
+                                <span class="font">
+                                    <span class="material-icons">location_on</span>
+                                </span>
+                                <span class="other-side">London, UK</span>
                             </span>
-                            <span class="other-side">London, UK</span>
-                        </span>
+                        </div>
                     </div>
-                  </div>
                 </div>
 
 
@@ -1410,17 +1439,17 @@
                         <br><br><br><br>
                     </div>
                     <div class="part-container">
-                    <hr>
-                    <div class="third-part">
-                        <span>$459/night</span>
-                        <span class="note">
-                            <span class="font">
-                                <span class="material-icons">location_on</span>
+                        <hr>
+                        <div class="third-part">
+                            <span>$459/night</span>
+                            <span class="note">
+                                <span class="font">
+                                    <span class="material-icons">location_on</span>
+                                </span>
+                                <span class="other-side">Milan, Italy</span>
                             </span>
-                            <span class="other-side">Milan, Italy</span>
-                        </span>
+                        </div>
                     </div>
-                  </div>
                 </div>
             </div>
         </main>
@@ -1429,10 +1458,10 @@
             <hr>
             <div class="the-end">
                 <div>
-                    <span class="alone">HOME</span>
-                    <span class="alone">COMPANY</span>
-                    <span class="alone">PORTOFOLIO</span>
-                    <span class="alone">BLOG</span>
+                    <span class="footer-text">HOME</span>
+                    <span class="footer-text">COMPANY</span>
+                    <span class="footer-text">PORTOFOLIO</span>
+                    <span class="footer-text">BLOG</span>
                 </div>
                 <div>
                     <span>© John Doe, 2023</span>
