@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let answer = Math.floor(Math.random() * 6) + 1
+        let guess;
+        let tries = 0;
+
+        do {
+            guess = parseInt(prompt(`Guess the number:`));
+
+            if (isNaN(guess)) {
+                throw new Error(`Only write numbers!`);
+                continue;
+            }
+            if ((guess < 0 || guess > 6)) {
+                throw new Error(`Only select numbers between 1-6`);
+                continue;
+            }
+
+            tries++;
+
+            if (guess !== answer) {
+                console.log(`Incorrect, try again.`);
+            }
+        }
+
+        while (guess !== answer);
+        alert(`Congratulations, you guessed the correct number in ${tries} ${tries === 1 ? "try" : "tries"}!`);
+        console.log(`The correct answer was ${answer}`);
+    </script>
+</body>
+
+</html>

@@ -12,30 +12,30 @@
         document.addEventListener('keypress', (e) => {
             let letter = e.key;
 
-            // te jete vetem nje shkronje
+            
             if (letter.length === 1) {
-                // shkronja te behet "lowercase"
+                
                 let lowerLetter = letter.toLowerCase();
 
-                // zanoret dhe bashketingelloret
+                
                 let vowels = ['a', 'e', 'i', 'o', 'u', 'y'];
                 let consonants = "bcdfghjklmnpqrstvwxz".split('');
 
-                // 
+                 
                 if (vowels.includes(lowerLetter)) {
                     console.log(` ${letter} is a vowel.`);
                 } 
                 else if (consonants.includes(lowerLetter)) {
                     console.log(` ${letter} is a consonant.`);
                 } 
-                else if (!isNaN(letter)) {  // Kontrollon a eshte numer
+                else if (!isNaN(letter)) { 
                     console.log(` ${letter} is a number.`);
                 } 
                 else {
                     console.log(` ${letter} is a symbol.`);
                 }
 
-                // kontrollon "uppercase"
+                
                 if (letter !== lowerLetter) {
                     console.log(`"${letter}" is an uppercase letter.`);
                 }

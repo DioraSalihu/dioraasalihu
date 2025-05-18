@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Numbers form 1 to n</title>
+</head>
+
+<body>
+    <script>
+        let number = parseInt(prompt("Write a number from 1 to 100:"));
+
+        while (number < 1 || number > 100 || isNaN(number)) {
+            
+            number = parseInt(prompt("Fail! Try again!:"));
+        }
+
+        let comma = "";
+        counter = 1;
+        while (counter <= number) {
+            comma += counter + (counter < number ? ", " : "");
+            counter++;
+        }
+        console.log(comma);
+    </script>
+</body>
+
+</html>

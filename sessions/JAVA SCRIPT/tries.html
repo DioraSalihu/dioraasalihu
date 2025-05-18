@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maximum of 3 tries</title>
+</head>
+
+<body>
+    <script>
+    const correctPassword = '12341234';
+    let tries = 3;
+
+    do {
+        let guesses = prompt(`Enter the password. ${tries} ${tries == 1 ? 'try': 'tries'} left:`);
+
+        if (guesses == correctPassword){
+            console.log(`Welcome!`);
+            break;
+        }
+        else{
+            tries--;
+
+            if(tries > 0 ){
+                console.log(`Incorrect password. ${tries} ${tries === 1 ? 'try': 'tries'} left: `);
+            }
+            else{
+                console.log(`Sorry, you can not try anymore. Acess denied.`);
+            }
+        }
+    }
+    while (tries > 0)
+    </script>
+</body>
+
+</html>
