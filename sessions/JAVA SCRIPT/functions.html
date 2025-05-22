@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function printHelloWorld() {
+            let text = `Hello World`;
+            console.log(text)
+        }
+        for (let i = 0; i < 10; i++) {
+            printHelloWorld();
+        }
+
+
+        function addText() {
+            let string = `Diora`;
+            console.log(string)
+        }
+        addText(`Diora`);
+
+
+        function kmToMi(y) {
+            let multiplication = y * 0.62137
+            console.log(multiplication)
+        }
+        kmToMi(4);
+
+
+        function radToArea(z) {
+            let radius = 3.14 * (z) ^ 2
+            console.log(radius)
+        }
+        radToArea(4);
+
+
+        function userToString(x,y){
+        console.log(`Welcome ${x} ${y}`)
+        }
+        let x = prompt(`Write your name:`);
+        let y = prompt(`Write your surname:`);
+        userToString(x,y)
+
+
+        function isWorkingCitizen(age) {
+            return age >= 18 && age < 65;
+        }
+
+        let age = parseInt(prompt(`Enter your age :`));
+
+        if (isWorkingCitizen(age)) {
+            console.log(`You are ${age}and you are a working citizen`);
+        } 
+        else {
+            console.log(`You are ${age} and you are not a working citizen`);
+        }
+
+        function isEven (number){
+            return number % 2 === 0;
+        }
+
+        let number = parseInt(prompt(`Enter a number:`));
+
+         if (isEven(number)) {
+            console.log(`The number ${number} is even`);
+        } 
+        else {
+            console.log(`The number ${number} is odd`);
+        }
+
+    </script>
+</body>
+
+</html>

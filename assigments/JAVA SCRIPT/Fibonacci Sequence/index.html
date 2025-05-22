@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let number = parseInt(prompt(`Enter  Fibonacci Numbers:`));
+        if (isNaN(number) || number <= 0) {
+            throw new Error(`Please write a positive number!`);
+        }
+        else {
+            let x = 1, y = 1;
+            let comma = ``;
+
+            for (let i = 0; i < number; i++) {
+                if (i === 0 || i === 1) {
+                    comma += `1`;
+                }
+                else {
+                    let sum = x + y;
+                    comma += sum;
+                    x = y;
+                    y = sum;
+                }
+                if (i < number - 1) {
+                    comma += `,`;
+                }
+            }
+            console.log(comma);
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let random = parseInt(prompt(`Write a number:`));
+        if (isNaN(random) || random <= 0) {
+            throw new Error(`Please write a positive number!`);
+        }
+        else {
+            let comma = "" + random;
+
+            for (; random !== 1;) {
+                if (random % 2 === 0) {
+                    random = random / 2;
+                }
+                else if (random % 2 !== 0) {
+                    random = random * 3 + 1;
+                }
+                comma += "," + random;
+            }
+            console.log(comma)
+        }
+    </script>
+</body>
+
+</html>
