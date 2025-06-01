@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click here</button>
+    <p>Hello</p>
+    <p>Hii</p>
+
+    <script>
+        let myBtn = document.getElementById(`btn`);
+        myBtn.style.backgroundColor = `green`;
+        myBtn.style.color = `white`;
+        myBtn.textContent = `Welcome`;
+
+        let paragraf = document.querySelector(`p`);
+        paragraf.style.backgroundColor = `pink`;
+
+        let heading = document.createElement(`h1`);
+        heading.innerHTML = `Hello I am a heading added by <strong> JS </strong>`;
+
+        document.body.appendChild(heading)
+
+    </script>
+</body>
+</html>

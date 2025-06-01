@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const s1 = "hello, dolly! ";
+        const s2 = s1.replace(/^./, char => char.toUpperCase());
+        let trimmed = s1.trim();
+        console.log(s2);
+
+
+        const time = '05:36 PM';
+        const [timePart, meridian] = time.split(' ');
+        const [hoursStr, minutesStr] = timePart.split(':');
+        const hours = parseInt(hoursStr);
+        const minutes = parseInt(minutesStr);
+        console.log('Hours:', hours);
+        console.log('Minutes:', minutes);
+        console.log('Meridian:', meridian);
+
+        const string = "New York, 15°C"
+        const[city, temperature] = string.split(`,`);
+        const theCity = (city);
+        const temp = (temperature);
+        console.log('City:', theCity);
+        console.log('Temperature:', temp);
+
+    </script>
+</body>
+
+</html>

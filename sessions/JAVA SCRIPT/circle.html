@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let circle = {
+            radius: 5,
+            area: 10,
+            perimeter: 20,
+            center: { x: 3, y: 4 },
+
+
+            getRadius: function () {
+                return this.radius;
+            },
+            setRadius: function (rad) {
+                this.radius = rad;
+            },
+
+            getArea: function () {
+                return this.area;
+            },
+            setArea: function (areaa) {
+                this.area = areaa;
+            },
+
+            getPerimeter: function () {
+                return this.perimeter;
+            },
+            setPerimeter: function (perimetri) {
+                this.perimeter = perimetri;
+            },
+
+
+            getCenter: function () {
+                return this.center;
+            },
+            setCenter: function (x, y) {
+                this.center = x, y;
+            },
+
+
+            grow: function (number) {
+                this.radius += number;
+                console.log(`Radius increased by ${number}. New radius is ${this.radius}.`);
+            },
+
+
+            shrink: function (integer) {
+                this.radius -= integer;
+                if (this.radius < 0) {
+                    this.radius = 0;
+                };
+                console.log(`Radius decreased by ${integer}. New radius is ${this.radius}.`);
+            },
+
+
+            printDetails: function () {
+                console.log(`Circle Details:`);
+
+                console.log(`Radius:`, circle.getRadius());
+                circle.setRadius(8);
+                console.log(`Radius:`, circle.getRadius());
+
+                console.log(`Area:`, circle.getArea());
+                circle.setArea(15);
+                console.log(`Area:`, circle.getArea());
+
+                console.log(`Perimeter:`, circle.getPerimeter());
+                circle.setPerimeter(25);
+                console.log(`Perimeter:`, circle.getPerimeter());
+
+                console.log(`Center:`, circle.getCenter());
+                circle.setCenter({ x: 10, y: 11 });
+                console.log(`Center:`, circle.getCenter());
+
+                let number = parseInt(prompt(`How much do you want to grow the radius?`));
+                circle.grow(number);
+
+                let integer = parseInt(prompt(`How much do you want to decrease the radius?`));
+                circle.shrink(integer);
+            }
+        }
+        circle.printDetails();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(53, 70, 124);
+        }
+
+        #heading {
+            display: flex;
+            justify-content: center;
+            font-family: 'Franklin Gothic Medium';
+            font-size: 65px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="heading">Tasks for 05/28/2025</h1>
+    <h4 id="question1"></h4>
+    <h4 id="question2"></h4>
+    <h4 id="question3"></h4>
+    <script>
+        let heading = document.getElementById(`heading`);
+        heading.style.color = `white`;
+
+        let questioon = prompt(`Write your 3 tasks for the day :`);
+        let questionn = prompt(`Write your 3 tasks for the day :`);
+        let questioonn = prompt(`Write your 3 tasks for the day :`);
+        let h4Element = document.getElementById("question1");
+        h4Element.innerHTML= questioon;
+        h4Element.style.textAlign = `center`;
+        h4Element.style.color=`white`;
+
+
+        let h4Element1 = document.getElementById("question2");
+        h4Element1.innerHTML= questionn;
+        h4Element1.style.textAlign = `center`;
+        h4Element1.style.color=`white`;
+
+
+        let h4Element2 = document.getElementById("question3");
+        h4Element2.innerHTML= questioonn;
+        h4Element2.style.textAlign = `center`;
+        h4Element2.style.color=`white`;
+
+    </script>
+</body>
+
+</html>

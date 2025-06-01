@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <style>
+    body {
+      font-family: 'Courier New';
+      background: #f0f0f0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #room {
+      background-color: lightblue;
+      position: relative;
+      margin-top: 20px;
+      
+    }
+
+    .label {
+      position: absolute; 
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    #info {
+      justify-content: center;
+      text-align: center;
+     
+    }
+  </style>
+</head>
+
+<body>
+  <div id="room"><div id="info"></div></div>
+  
+
+  <script>
+    let width = parseFloat(prompt("Write your room width (in meters):"));
+    let height = parseFloat(prompt("Write your room height (in meters):"));
+
+    console.log("Room width is:", width);
+    console.log("Room height is:", height);
+
+    
+    if (height > width) {
+      [width, height] = [height, width];
+    }
+    if (isNaN(width) || isNaN(height)) {
+        throw new Error("Write only numbers!");
+    }
+
+
+    const area = (width * height).toFixed(2);
+    const perimeter = (2 * (width + height)).toFixed(2);
+
+    
+    const scale = 60; 
+    const pxWidth = width * scale;
+    const pxHeight = height * scale;
+
+    const room = document.getElementById("room");
+    room.style.width = `${pxWidth}px`;
+    room.style.height = `${pxHeight}px`;
+
+    
+    const widthLabel = document.createElement("div");
+    widthLabel.classList.add("label");
+    widthLabel.textContent = `${width} m`;
+    widthLabel.style.top = "-24px";
+    widthLabel.style.left = `${pxWidth / 2 - 30}px`;
+
+    const heightLabel = document.createElement("div");
+    heightLabel.classList.add("label");
+    heightLabel.textContent = `${height} m`;
+    heightLabel.style.top = `${pxHeight / 2 - 10}px`;
+    heightLabel.style.left = "-60px";
+    
+
+    room.appendChild(widthLabel);
+    room.appendChild(heightLabel);
+
+    
+    document.getElementById("info").innerHTML = `
+      <p>Area: ${area} m²</p>
+      <p>Perimeter: ${perimeter} m</p>
+    `;
+  </script>
+
+</body>
+</html>
