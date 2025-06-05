@@ -1,0 +1,113 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: rgb(127, 246, 255);
+            
+        }
+    </style>
+</head>
+
+<body>
+    
+
+    <script>
+        function onFunction() {
+            alert(`You are back online :)`);
+        }
+        function offFunction() {
+            alert(`You are offline, please wait until you are reconnected`);
+        }
+        window.addEventListener('online', onFunction);
+        window.addEventListener('offline', offFunction);
+    </script>
+</body>
+
+</html> -->
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Network Status</title>
+    <style>
+        #offline-popup {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff4d4d;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            z-index: 1000;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        #online-popup {
+            display: none;
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #4dff4d;
+            color: rgb(0, 0, 0);
+            padding: 16px 24px;
+            border-radius: 8px;
+            z-index: 1000;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50%) translateY(-10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateX(-50%) translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="offline-popup">&#9888;&#65039; You are offline. Please wait until you are reconnected.</div>
+    <div id="online-popup">&#128512; You are back online! </div>
+
+    <script>
+        let offlinePopup = document.getElementById('offline-popup');
+        let onlinePopup = document.getElementById('online-popup');
+
+        function showOfflinePopup() {
+            offlinePopup.style.display = 'block';
+        }
+
+        function hideOfflinePopup() {
+            offlinePopup.style.display = 'none';
+            onlinePopup.style.display = `block`;
+        }
+
+        window.addEventListener('offline', showOfflinePopup);
+        window.addEventListener('online', hideOfflinePopup);
+
+    </script>
+
+</body>
+
+</html>
