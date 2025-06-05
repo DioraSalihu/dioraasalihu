@@ -5,18 +5,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        #myTextbox {
+            background-color: black;
+            color: white;
+            border: 1px solid #333;
+            padding: 8px;
+            font-size: 16px;
+        }
+    </style>
 </head>
 
 <body>
-    <input type="text" id="myTextbox" placeholder="Enter text here">
+    <input type="text" id="myTextbox" placeholder="Start typing">
 
     <script>
-        const textbox = document.getElementById('myTextbox');
+        let textbox = document.getElementById('myTextbox');
 
-        textbox.addEventListener('input', function (event) {
-            // Input validation or formatting logic here
+        textbox.addEventListener('input', (event)=> {
             console.log("Input changed: " + event.target.value);
         });
+
     </script>
 </body>
 

@@ -1,0 +1,66 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+
+    <script>
+        document.addEventListener(`click`, (event)=>{
+            console.log(event.clientX);
+            console.log(event.clientY);
+        })
+    </script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .click-box {
+            border: 2px solid black;
+            width: 150px;
+            height: 150px;
+            position: fixed;
+            transform: translate(-50%, -50%);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <script>
+        document.addEventListener('click', (event)=> {
+            const x = event.clientX;
+            const y = event.clientY;
+
+            const box = document.createElement('div');
+            box.className = 'click-box';
+            box.style.left = x + 'px';
+            box.style.top = y + 'px';
+
+            document.body.appendChild(box);
+        });
+    </script>
+
+</body>
+
+</html>
