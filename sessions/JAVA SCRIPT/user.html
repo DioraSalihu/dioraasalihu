@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Longest String Finder</title>
+</head>
+<body>
+
+<script>
+  let longestString = "";
+
+  for (let i = 0; i < 5; i++) {
+    let input = prompt("Enter a string:");
+    if (input !== null && input.trim() !== "") {
+      input = input.trim();
+
+      if (input.length > longestString.length) {
+        longestString = input;
+      }
+    } 
+  }
+
+  alert("The longest string is: " + longestString);
+</script>
+
+</body>
+</html>
