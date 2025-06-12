@@ -1,128 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: hsl(0, 0%, 90%);
-}
-#myH1{
-    font-size: 4rem;
-    font-family: "Arial", sans-serif;
-    color: hsl(0, 0%, 25%);
-}
-#container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin-top: 20%;
-    padding: 30px;
-    border: 5px solid;
-    border-radius: 50px;
-    background-color: rgb(0, 0, 0);
-}
-#display{
-    font-size: 5rem;
-    color: white;
-    margin-bottom: 25px;
-}
-#controls button{
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    margin: 5px;
-    min-width: 125px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    color: white;
-    transition: background-color 0.5s ease;
-}
-#startBtn{
-    background-color: hsl(115, 100%, 40%);
-}
-#startBtn:hover{
-    background-color: hsl(115, 100%, 30%);
-}
-#stopBtn{
-    background-color: hsl(10, 90%, 50%);
-}
-#stopBtn:hover{
-    background-color: hsl(10, 90%, 40%);
-}
-#resetBtn{
-    background-color: hsl(205, 90%, 60%);
-}
-#resetBtn:hover{
-    background-color: hsl(205, 90%, 50%);
-}
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+        }
+
+        #myH1 {
+            font-size: 4rem;
+            font-family: "Arial", sans-serif;
+        }
+
+        #container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20%;
+            padding: 30px;
+            border: 5px solid;
+            border-radius: 50px;
+            background-color: black;
+        }
+
+        #display {
+            font-size: 5rem;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        #controls button {
+            font-size: 1.5rem;
+            font-weight: bold;
+            padding: 10px 20px;
+            margin: 5px;
+            min-width: 125px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            color: white;
+            transition: background-color 0.5s ease;
+        }
+
+        #startBtn {
+            background-color: rgb(149, 239, 14);
+        }
+
+        #startBtn:hover {
+            background-color: green;
+        }
+
+        #stopBtn {
+            background-color: hsl(10, 90%, 50%);
+        }
+
+        #stopBtn:hover {
+            background-color: rgb(202, 10, 10);
+        }
+
     </style>
 </head>
+
 <body>
-      <div id="container">
+    <div id="container">
         <div id="display">
-            00:00:00:00
+            00:00,00
         </div>
         <div id="controls">
             <button id="startBtn" onclick="start()">Start</button>
             <button id="stopBtn" onclick="stop()">Stop</button>
-            <button id="resetBtn" onclick="reset()">Reset</button>
+
         </div>
     </div>
 
     <script>
-        const display = document.getElementById("display");
-let timer = null;
-let startTime = 0;
-let elapsedTime = 0;
-let isRunning = false;
+        let display = document.getElementById("display");
+        let timer = null;
+        let startTime = 0;
+        let elapsedTime = 0;
+        let isRunning = false;
 
-function start(){
-    if(!isRunning){
-        startTime = Date.now() - elapsedTime;
-        timer = setInterval(update, 10);
-        isRunning = true;
-    }
-}
+        function start() {
+            if (!isRunning) {
+                startTime = Date.now() - elapsedTime;
+                timer = setInterval(update, 10);
+                isRunning = true;
+            }
+        }
 
-function stop(){
-    if(isRunning){
-        clearInterval(timer);
-        elapsedTime = Date.now() - startTime;
-        isRunning = false;
-    }
-}
+        function stop() {
+            if (isRunning) {
+                clearInterval(timer);
+                elapsedTime = Date.now() - startTime;
+                isRunning = false;
+            }
+        }
 
-function reset(){
-    clearInterval(timer);
-    startTime = 0;
-    elapsedTime = 0;
-    isRunning = false;    
-    display.textContent = "00:00:00:00";
-}
 
-function update(){
-    
-    const currentTime = Date.now();
-    elapsedTime = currentTime - startTime;
 
-    let hours = Math.floor(elapsedTime / (1000 * 60 * 60));
-    let minutes = Math.floor(elapsedTime / (1000 * 60) % 60);
-    let seconds = Math.floor(elapsedTime / 1000 % 60);
-    let milliseconds = Math.floor(elapsedTime % 1000 / 10);
+        function update() {
 
-    hours = String(hours).padStart(2, "0");
-    minutes = String(minutes).padStart(2, "0");
-    seconds = String(seconds).padStart(2, "0");
-    milliseconds = String(milliseconds).padStart(2, "0");
+            const currentTime = Date.now();
+            elapsedTime = currentTime - startTime;
 
-    display.textContent = `${hours}:${minutes}:${seconds}:${milliseconds}`;
-}
+            let hours = Math.floor(elapsedTime / (1000 * 60 * 60));
+            let minutes = Math.floor(elapsedTime / (1000 * 60) % 60);
+            let seconds = Math.floor(elapsedTime / 1000 % 60);
+            let milliseconds = Math.floor(elapsedTime % 1000 / 10);
+
+            hours = String(hours).padStart(2, "0");
+            minutes = String(minutes).padStart(2, "0");
+            seconds = String(seconds).padStart(2, "0");
+            milliseconds = String(milliseconds).padStart(2, "0");
+
+            display.textContent = `${minutes}:${seconds},${milliseconds}`;
+        }
     </script>
 </body>
+
 </html>
