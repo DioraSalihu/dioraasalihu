@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista e nxenesve</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            font-size: 20px;
+            width: 100%;
+        }
+
+        #first {
+            background-color: rgb(229, 210, 187);
+        }
+
+        button {
+            background-color: rgb(53, 127, 196);
+            padding: 10px;
+            margin-top: 10px;
+            color: white;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(31, 83, 132);
+            cursor: pointer;
+        }
+
+        #result {
+            color: green;
+            font-weight: bold;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <table border="1" id="table">
+        <tr id="first">
+            <td>Emri</td>
+            <td>Nota</td>
+        </tr>
+        <tr>
+            <td>Arta</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>Bledi</td>
+            <td>6</td>
+        </tr>
+        <tr>
+            <td>Dona</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Elton</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>Fiona</td>
+            <td>10</td>
+        </tr>
+    </table>
+
+    <button onclick="bestStudent()">Gjej nxenesin me te mire</button>
+    <p id="result"></p>
+
+    <script>
+        function bestStudent() {
+
+            var table = document.getElementById(`table`);
+            var rows = Array.from(table.rows).slice(1);
+            let students = [];
+            let topStudents = [];
+
+            rows.forEach(row => {
+                let name = row.cells[0].innerHTML;
+                let grade = parseInt(row.cells[1].innerHTML);
+                students.push({ name, grade, row });
+            });
+
+            let maxGrade = 0;
+
+            students.forEach(student => {
+                if (student.grade > maxGrade) {
+                    maxGrade = student.grade;
+                }
+            });
+
+            students.forEach(student => {
+                if (student.grade === maxGrade) {
+                    topStudents.push(student.name);
+                }
+            })
+
+            document.getElementById(`result`).innerHTML = `Nxenesja me noten me te larte eshte: ${topStudents} me noten ${maxGrade}.`;
+        }
+    </script>
+</body>
+
+</html>

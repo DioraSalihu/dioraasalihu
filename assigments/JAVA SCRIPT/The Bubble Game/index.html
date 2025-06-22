@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #e0f7fa;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+
+    #gameArea {
+      width: 100vw;
+      height: 100vh;
+      position: relative;
+    }
+
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .popped {
+      transform: scale(1.5);
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+<div id="gameArea"></div>
+
+<script>
+  const gameArea = document.getElementById('gameArea');
+  const totalBubbles = 1000;
+  let bubblesRemaining = totalBubbles;
+
+  function getRandomColor() {
+
+    return `hsl(${Math.floor(Math.random() * 360)}, 70%, 60%)`;
+  }
+
+  function getRandomSize() {
+    return Math.floor(Math.random() * 40) + 30; 
+  }
+
+  function createBubbles() {
+    for (let i = 0; i < totalBubbles; i++) {
+      const bubble = document.createElement('div');
+      const size = getRandomSize();
+      bubble.classList.add('bubble');
+      bubble.style.width = `${size}px`;
+      bubble.style.height = `${size}px`;
+      bubble.style.background = getRandomColor();
+      bubble.style.top = Math.random() * (window.innerHeight - size) + 'px';
+      bubble.style.left = Math.random() * (window.innerWidth - size) + 'px';
+
+      gameArea.appendChild(bubble);
+    }
+  }
+
+
+  gameArea.addEventListener('click', function (e) {
+    if (e.target.classList.contains('bubble')) {
+      e.target.classList.add('popped');
+    }
+  });
+
+  createBubbles();
+</script>
+
+</body>
+</html>

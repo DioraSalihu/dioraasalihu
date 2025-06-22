@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Document</title>
   <style>
     body {
@@ -19,37 +20,46 @@
     }
 
     @keyframes float {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-20px); }
-      100% { transform: translateY(0); }
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body>
   <script>
     for (let i = 0; i < 500; i++) {
       const bubble = document.createElement("div");
       bubble.classList.add("bubble");
 
-      
+
       const size = Math.floor(Math.random() * 40) + 10;
       bubble.style.width = size + "px";
       bubble.style.height = size + "px";
 
-      
+
       const x = Math.random() * window.innerWidth;
       const y = Math.random() * window.innerHeight;
       bubble.style.left = x + "px";
       bubble.style.top = y + "px";
 
-     
+
       const r = Math.floor(Math.random() * 255);
       const g = Math.floor(Math.random() * 255);
       const b = Math.floor(Math.random() * 255);
       bubble.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 
-      
-      const duration = 3 + Math.random() 
+
+      const duration = 3 + Math.random()
       bubble.style.animationDuration = `${duration}s`;
       bubble.style.animationDelay = `${Math.random() * 2}s`;
 
@@ -57,4 +67,5 @@
     }
   </script>
 </body>
+
 </html>

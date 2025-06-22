@@ -10,21 +10,17 @@
 <body>
     <label for="pass">Password:</label>
     <br>
-    <input type="passsword"  id="password">
+    <input type="passsword" id="password">
     <script>
-     let myInput = document.getElementById(`password`);
-     
-     function innput() {
-        myInput.type = 'text';
-     }
+        let myInput = document.getElementById(`password`);
 
-     input.addEventListener(`mouseenter`, innput);
+        myInput.addEventListener('mouseenter', () => {
+            myInput.type = 'text';
+        });
 
-     function passInput() {
-        myInput.type = 'password';
-     }
-
-     passInput.addEventListener(`mouseleave`, passInput);
+        myInput.addEventListener('mouseleave', () => {
+            myInput.type = 'password';
+        });
     </script>
 </body>
 
