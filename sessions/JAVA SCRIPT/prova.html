@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            background-color: rgb(220, 232, 236);
+        }
+
+        table {
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        td {
+            padding: 15px 25px 15px 25px;
+        }
+
+        #header {
+            font-weight: bold;
+            background-color: rgb(220, 232, 236);
+        }
+
+        #wrapper {
+            background-color: white;
+            border-radius: 15px;
+            width: 500px;
+            height: 300px;
+            margin-top: 80px;
+            padding: 30px;
+        }
+
+        #container {
+            width: fit-content;
+            padding: 50px;
+            background-color: white;
+            border-radius: 10px;
+            margin-top: 40px;
+        }
+
+        button {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 13px;
+            font-size: 15px;
+            border-radius: 5px;
+            margin-bottom: 15px;
+
+        }
+
+        button:hover {
+            cursor: pointer;
+        }
+
+        #btn {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #modal {
+            margin-top: 100px;
+            width: 340px;
+            height: 340px;
+            background-color: white;
+            border-radius: 15px;
+            display: none;
+            position: fixed;
+            box-shadow: 1px 1px 77px -1px rgba(0, 0, 0, 0.75);
+            -webkit-box-shadow: 1px 1px 77px -1px rgba(0, 0, 0, 0.75);
+            -moz-box-shadow: 1px 1px 77px -1px rgba(0, 0, 0, 0.75);
+        }
+
+        .top {
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+        }
+
+        .box {
+            height: 175px;
+            margin: 20px 20px 20px 20px;
+        }
+
+        input {
+            font-size: 18px;
+            height: 35px;
+            width: 100%;
+            padding: 5px 10px;
+            box-sizing: border-box;
+            margin-bottom: 12px;
+            border-radius: 5px;
+            border: 1px solid grey;
+        }
+
+        input::placeholder {
+            font-size: 15px;
+        }
+
+        .buton {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 6px;
+            font-size: 17px;
+            border-radius: 5px;
+        }
+
+        .butonn {
+            background-color: rgb(105, 103, 103);
+            color: white;
+            border: none;
+            padding: 6px;
+            font-size: 17px;
+            border-radius: 5px;
+        }
+
+        #button-container {
+            display: flex;
+            justify-content: end;
+            margin-right: 20px;
+            margin-top: 20px;
+            gap: 10px;
+        }
+
+        select {
+            height: 35px;
+            font-size: 15px;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin-bottom: 12px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <div id="btn">
+            <button id="openModalBtn">Add Student</button>
+        </div>
+
+        <table border="1">
+            <tr id="header">
+                <td>Year</td>
+                <td>Student Name</td>
+                <td>Photo</td>
+                <td>GPA</td>
+                <td>Actions</td>
+            </tr>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+
+    <div id="modal">
+        <header>
+            <div class="top">Add Student</div>
+        </header>
+        <main>
+            <div class="box">
+                <form action="">
+                    <input type="text" name="name" id="year" placeholder="Year">
+                    <input type="text" name="name" id="student" placeholder="Student Name">
+                    <select name="gender" id="gender">
+                        <option value="female">Female</option>
+                        <option value="male">Male</option>
+                    </select>
+                    <input type="text" name="name" id="gpa" placeholder="GPA">
+
+
+
+                </form>
+            </div>
+
+        </main>
+        <hr>
+        <footer>
+            <div id="button-container">
+                <button class="butonn" id="cancel">Cancel</button>
+                <button class="buton" id="sub">Submit</button>
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script>
+        const femalePic = `woman.avif`;
+        const malePic = `man.avif`;
+
+        // genderSelect.addEventListener('change', () => {
+        //     if (genderSelect.value === 'female') {
+        //         photoInput.value = femalePic;
+        //     } else if (genderSelect.value === 'male') {
+        //         photoInput.value = malePic;
+        //     }
+        // });
+
+        const openBtn = document.getElementById(`openModalBtn`);
+        const modal = document.getElementById(`modal`);
+        openBtn.addEventListener('click', () => {
+            modal.style.display = 'block';
+        });
+
+        let year = document.getElementById(`year`);
+        let student = document.getElementById(`student`);
+        let gpa = document.getElementById(`gpa`);
+        const gender = document.getElementById('gender');
+        let actions = document.getElementById(`actions`);
+        let tableBody = document.getElementById('tableBody');
+
+        const cancelBtn = document.getElementById(`cancel`);
+        cancelBtn.addEventListener(`click`, (e) => {
+            modal.style.display = `none`;
+        });
+
+        const btn = document.getElementById(`sub`);
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const photoURL = gender.value === 'female' ? femalePic : malePic;
+
+            const newRow = document.createElement('tr');
+            newRow.innerHTML = `
+            <td>${year.value}</td>
+            <td>${student.value}</td>
+            <td><img src="${photoURL}" alt="photo" width="50" height="50"></td>
+            <td>${gpa.value}</td>
+            <td>
+            <button class="edit-btn">Edit</button>
+            <button class="remove-btn">Remove</button>
+            </td>`;
+
+            tableBody.appendChild(newRow);
+            modal.style.display = `none`;
+
+            const editBtn = newRow.querySelector(`.edit-btn`);
+            const removeBtn = newRow.querySelector(`.remove-btn`);
+
+            removeBtn.addEventListener(`click`, () => {
+                newRow.remove();
+            });
+
+            editBtn.addEventListener(`click`, () => {
+                year.value = newRow.children[0].textContent;
+                student.value = newRow.children[1].textContent;
+                gender.value = photoURL === femalePic ? 'female' : 'male';
+                gpa.value = newRow.children[3].textContent;
+
+                newRow.remove();
+                modal.style.display = 'block';
+            });
+
+            clearForm()
+            modal.style.display = 'none';
+        });
+        function clearForm(){
+            year.value = '';
+            student.value = '';
+            gpa.value = '';
+            gender.value=`female`;
+        }
+            
+        
+
+    </script>
+</body>
+
+</html>
